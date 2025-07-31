@@ -1,230 +1,215 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Produtos | MigControl</title>
-		<link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos | MigControl</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
-		<!-- Font Awesome -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-		/>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-			rel="stylesheet"
-		/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-		<!-- CSS -->
-		<link rel="stylesheet" href="assets/css/index.css" />
-		<link rel="stylesheet" href="assets/css/produtos.css" />
-		<link rel="stylesheet" href="assets/css/cards.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/produtos.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
 
-		<!-- JS para carregar Header/Footer/Formulário -->
-		<script src="assets/js/loadComponents.js"></script>
-	</head>
-	<body>
-		<!-- Header dinâmico -->
-		<div id="header"></div>
+    <!-- JS para carregar Header/Footer/Formulário -->
+    <script src="assets/js/loadComponents.js"></script>
+  </head>
+  <body>
+    <!-- Header dinâmico -->
+    <div id="header"></div>
 
-		<!-- Banner -->
-		<section class="banner-products d-flex align-items-center">
-			<div class="container-fluid">
-				<h1 class="text-white">Produtos</h1>
-			</div>
-		</section>
+    <!-- Banner -->
+    <section class="banner-products d-flex align-items-center">
+      <div class="container-fluid">
+        <h1 class="text-white">Produtos</h1>
+      </div>
+    </section>
 
-		<!-- ================== PONTO ELETRÔNICO ================== -->
-		<section class="product-category" id="ponto-eletronico">
-			<div class="container-fluid">
-				<div class="titulo"></div>
-				<div class="titulo">
-					<h2 class="section-title">Ponto Eletrônico</h2>
-					<p>
-						Oferecemos aos nossos clientes um amplo portfólio de produtos,
-						soluções e serviços através de um único fornecedor. Veja abaixo
-						alguns dos nossos destaques.
-					</p>
-				</div>
+    <!-- ================== PONTO ELETRÔNICO ================== -->
+    <section class="product-category" id="ponto-eletronico">
+      <div class="container-fluid">
+        <div class="titulo"></div>
+        <div class="titulo">
+          <h2 class="section-title">Ponto Eletrônico</h2>
+          <p>
+            Oferecemos aos nossos clientes um amplo portfólio de produtos, soluções e serviços
+            através de um único fornecedor. Veja abaixo alguns dos nossos destaques.
+          </p>
+        </div>
 
-				<div class="products-grid">
-					<!-- Produto: Relógio de Ponto Facial -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/REP-iDClass-Facial-Frontal.png"
-							alt="Relógio de Ponto Facial"
-						/>
-						<div class="product-info">
-							<h4>Relógio de Ponto Facial</h4>
-							<p>
-								Registro de ponto com reconhecimento facial e impressão de
-								comprovante.
-							</p>
-							<a href="produto-id-class-facial.html">Ver detalhes →</a>
-						</div>
-					</div>
+        <div class="products-grid">
+          <!-- Produto: Relógio de Ponto Facial -->
+          <a href="produto-id-class-facial.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img
+                src="assets/images/produtos/REP-iDClass-Facial-Frontal.png"
+                alt="Relógio de Ponto Facial"
+              />
+            </div>
+            <div class="product-info">
+              <h4>Relógio de Ponto Facial</h4>
+              <p>Registro de ponto com reconhecimento facial e impressão de comprovante.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: iDFace -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img src="assets/images/produtos/iDFace-Frontal.png" alt="iDFace" />
-						<div class="product-info">
-							<h4>Terminal de Reconhecimento Facial</h4>
-							<p>
-								Controle de ponto por reconhecimento facial de alta performance.
-							</p>
-							<a href="produto-id-face.html">Ver detalhes →</a>
-						</div>
-					</div>
+          <!-- Produto: iDFace -->
+          <a href="produto-id-face.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDFace-Frontal.png" alt="iDFace" />
+            </div>
+            <div class="product-info">
+              <h4>Terminal de Reconhecimento Facial</h4>
+              <p>Controle de ponto por reconhecimento facial de alta performance.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: Relógio de Ponto 671 -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/iDClass-671.png"
-							alt="Relógio de Ponto 671"
-						/>
-						<div class="product-info">
-							<h4>Relógio de Ponto 671</h4>
-							<p>
-								Solução completa de ponto em conformidade com a Portaria
-								671/2021.
-							</p>
-							<a href="produto-id-class-671.html">Ver detalhes →</a>
-						</div>
-					</div>
+          <!-- Produto: Relógio de Ponto 671 -->
+          <a href="produto-id-class-671.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDClass-671.png" alt="Relógio de Ponto 671" />
+            </div>
+            <div class="product-info">
+              <h4>Relógio de Ponto 671</h4>
+              <p>Solução completa de ponto em conformidade com a Portaria 671/2021.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: iDSECURE Cloud -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/iDSecure-Cloud.png"
-							alt="iDSECURE Cloud"
-						/>
-						<div class="product-info">
-							<h4>Software de Apuração de Ponto</h4>
-							<p>Software em nuvem para gerenciamento de ponto e acesso.</p>
-							<a href="produto-id-secure-cloud.html">Ver detalhes →</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+          <!-- Produto: iDSECURE Cloud -->
+          <a href="produto-id-secure-cloud.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDSecure-Cloud.png" alt="iDSECURE Cloud" />
+            </div>
+            <div class="product-info">
+              <h4>Software de Apuração de Ponto</h4>
+              <p>Software em nuvem para gerenciamento de ponto e acesso.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-		<!-- ================== CONTROLE DE ACESSO ================== -->
-		<section class="product-category" id="controle-acesso">
-			<div class="container-fluid">
-				<div class="titulo">
-					<h2 class="section-title">Controle de Acesso</h2>
-					<p>
-						Oferecemos aos nossos clientes um amplo portfólio de produtos,
-						soluções e serviços através de um único fornecedor. Veja abaixo
-						alguns dos nossos destaques.
-					</p>
-				</div>
+    <!-- ================== CONTROLE DE ACESSO ================== -->
+    <section class="product-category" id="controle-acesso">
+      <div class="container-fluid">
+        <div class="titulo">
+          <h2 class="section-title">Controle de Acesso</h2>
+          <p>
+            Oferecemos aos nossos clientes um amplo portfólio de produtos, soluções e serviços
+            através de um único fornecedor. Veja abaixo alguns dos nossos destaques.
+          </p>
+        </div>
 
-				<div class="products-grid">
-					<!-- Produto: iDFace -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img src="assets/images/produtos/iDFace-Frontal.png" alt="iDFace" />
-						<div class="product-info">
-							<h4>Terminal de Reconhecimento Facial</h4>
-							<p>
-								Controle de acesso por reconhecimento facial de alta
-								performance.
-							</p>
-							<a href="produto-id-face.html">Ver detalhes →</a>
-						</div>
-					</div>
+        <div class="products-grid">
+          <!-- Produto: iDFace -->
+          <a href="produto-id-face.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDFace-Frontal.png" alt="iDFace" />
+            </div>
+            <div class="product-info">
+              <h4>Terminal de Reconhecimento Facial</h4>
+              <p>Controle de acesso por reconhecimento facial de alta performance.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: iDFace Max -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/iDFace-Max-Frontal.png"
-							alt="iDFace Max"
-						/>
-						<div class="product-info">
-							<h4>Terminal de Reconhecimento Facial Max</h4>
-							<p>Terminal facial robusto para ambientes de alto fluxo.</p>
-							<a href="produto-id-face-max.html">Ver detalhes →</a>
-						</div>
-					</div>
+          <!-- Produto: iDFace Max -->
+          <a href="produto-id-face-max.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDFace-Max-Frontal.png" alt="iDFace Max" />
+            </div>
+            <div class="product-info">
+              <h4>Terminal de Reconhecimento Facial Max</h4>
+              <p>Terminal facial robusto para ambientes de alto fluxo.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: iDFlex Pro -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/iDFlex-Pro-Frontal.png"
-							alt="iDFlex Pro"
-						/>
-						<div class="product-info">
-							<h4>Terminal de Reconhecimento Biométrico</h4>
-							<p>
-								Controlador de acesso multifuncional com várias formas de
-								autenticação.
-							</p>
-							<a href="produto-id-flex-pro.html">Ver detalhes →</a>
-						</div>
-					</div>
+          <!-- Produto: iDFlex Pro -->
+          <a href="produto-id-flex-pro.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDFlex-Pro-Frontal.png" alt="iDFlex Pro" />
+            </div>
+            <div class="product-info">
+              <h4>Terminal de Reconhecimento Biométrico</h4>
+              <p>Controlador de acesso multifuncional com várias formas de autenticação.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: iDBlock Next -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/iDBlock-Next-Completo.png"
-							alt="iDBlock Next"
-						/>
-						<div class="product-info">
-							<h4>Catraca Controladora de Acesso Next</h4>
-							<p>
-								Catraca inteligente com design inovador e alta durabilidade.
-							</p>
-							<a href="produto-id-block-next.html">Ver detalhes →</a>
-						</div>
-					</div>
+          <!-- Produto: iDBlock Next -->
+          <a href="produto-id-block-next.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img src="assets/images/produtos/iDBlock-Next-Completo.png" alt="iDBlock Next" />
+            </div>
+            <div class="product-info">
+              <h4>Catraca Controladora de Acesso Next</h4>
+              <p>Catraca inteligente com design inovador e alta durabilidade.</p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
 
-					<!-- Produto: RHiD -->
-					<div class="product-card">
-						<span class="product-label">Comprar agora</span>
-						<img
-							src="assets/images/produtos/RHID.png"
-							alt="RHiD - Software de Apuração de Ponto"
-						/>
-						<div class="product-info">
-							<h4>Software de Controle de Acesso Cloud</h4>
-							<p>
-								Controle de ponto 100% web com gestão de jornadas, férias e
-								horas extras em uma só plataforma.
-							</p>
-							<a href="produto-id-block-next.html">Ver detalhes →</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+          <!-- Produto: RHiD -->
+          <a href="produto-software-rhid.html" class="product-card">
+            <span class="product-label">Comprar agora</span>
+            <div class="imagem-wrapper">
+              <img
+                src="assets/images/produtos/RHID.png"
+                alt="RHiD - Software de Apuração de Ponto"
+              />
+            </div>
+            <div class="product-info">
+              <h4>Software de Controle de Acesso Cloud</h4>
+              <p>
+                Controle de ponto 100% web com gestão de jornadas, férias e horas extras em uma só
+                plataforma.
+              </p>
+              <span class="link-produto">Ver detalhes →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-		<!-- Formulários dinâmicos -->
-		<div id="forms"></div>
+    <!-- Formulários dinâmicos -->
+    <div id="forms"></div>
 
-		<!-- Footer dinâmico -->
-		<div id="footer"></div>
+    <!-- Footer dinâmico -->
+    <div id="footer"></div>
 
-		<!-- Bootstrap JS -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- Load components -->
-		<script type="module" src="assets/js/loadComponents.js"></script>
-	</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Load components -->
+    <script type="module" src="assets/js/loadComponents.js"></script>
+  </body>
 </html>

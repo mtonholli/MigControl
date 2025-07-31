@@ -72,7 +72,7 @@ h4 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.7rem;
   font-weight: 300;
   max-width: 800px;
@@ -87,7 +87,8 @@ p {
   gap: 20px;
 }
 
-.titulo p, .text-content p {
+.titulo p,
+.text-content p {
   text-align: justify;
 }
 
@@ -157,28 +158,28 @@ p {
 }
 
 @media (max-width: 768px) {
-h1 {
-  font-size: 2.4rem;
-  line-height: 2.6rem;
-}
+  h1 {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+  }
 
-h2 {
-  font-size: 2rem;
-  line-height: 2.1rem;
-}
+  h2 {
+    font-size: 2rem;
+    line-height: 2.1rem;
+  }
 
-h3 {
-  font-size: 1.7rem;
-  line-height: 1.8rem;
-}
+  h3 {
+    font-size: 1.7rem;
+    line-height: 1.8rem;
+  }
 
-h4 {
-  font-size: 1.5rem;
-  line-height: 1.6rem;
-}
+  h4 {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+  }
 
-p {
-  font-size: 1rem;
-  line-height: 1.7;
-}
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }
