@@ -121,6 +121,12 @@
 }
 
 /* Breakpoint principal para tablets e dispositivos menores */
+@media (max-width: 1600px) {
+  .diferenciais {
+    padding: 80px 100px;
+  }
+}
+
 @media (max-width: 992px) {
   .diferenciais {
     gap: 40px;

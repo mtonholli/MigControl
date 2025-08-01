@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Controlador de Acesso iDFace Max</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -50,7 +50,14 @@
             rostos vivos, mesmo com máscara.
           </p>
           <div class="hero-buttons">
-            <button class="button button-blue">Fale com um especialista ></button>
+            <button
+              id="toggleFormBtn"
+              data-bs-toggle="modal"
+              data-bs-target="#formModal"
+              class="button button-blue"
+            >
+              Fale com um especialista >
+            </button>
           </div>
         </div>
         <div class="hero-image">
@@ -73,7 +80,7 @@
         </div>
         <div class="features-grid">
           <div class="feature-item">
-            <img src="assets/icons/touchscreen.png" alt="Identificação Facial" />
+            <img src="assets/icons/icon-facial.png" alt="Identificação Facial" />
             <h3>Identificação Facial de Alta Capacidade</h3>
             <p>
               Reconhecimento de até 100.000 faces com detecção de rosto vivo, garantindo segurança e
@@ -81,7 +88,7 @@
             </p>
           </div>
           <div class="feature-item">
-            <img src="assets/icons/biometria.png" alt="Display Touchscreen" />
+            <img src="assets/icons/smartphone.png" alt="Display Touchscreen" />
             <h3>Display Touchscreen de 7"</h3>
             <p>
               Navegação fácil e intuitiva para configuração de regras de acesso e visualização de
@@ -89,7 +96,7 @@
             </p>
           </div>
           <div class="feature-item">
-            <img src="assets/icons/conformidade.png" alt="Grau de Proteção" />
+            <img src="assets/icons/touchscreen.png" alt="Grau de Proteção" />
             <h3>Grau de Proteção IP65</h3>
             <p>
               Ideal para ambientes internos e externos cobertos, garantindo durabilidade e
@@ -97,7 +104,7 @@
             </p>
           </div>
           <div class="feature-item">
-            <img src="assets/icons/design.png" alt="Regras de Acesso" />
+            <img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
             <h3>Regras de Acesso Personalizadas</h3>
             <p>
               Defina regras por grupos e horários, adaptando o controle de acesso às necessidades da
@@ -105,12 +112,12 @@
             </p>
           </div>
           <div class="feature-item">
-            <img src="assets/icons/touchscreen.png" alt="Interfone SIP" />
+            <img src="assets/icons/interactive.png" alt="Interfone SIP" />
             <h3>Interfone SIP Integrado</h3>
             <p>Comunicação facilitada e integrada ao sistema de controle de acesso</p>
           </div>
           <div class="feature-item">
-            <img src="assets/icons/biometria.png" alt="Múltiplas Comunicações" />
+            <img src="assets/icons/multi-channel.png" alt="Múltiplas Comunicações" />
             <h3>Múltiplas Formas de Comunicação</h3>
             <p>
               Conectividade via TCP/IP, USB, Wi-Fi e Bluetooth para flexibilidade na instalação e
@@ -129,10 +136,7 @@
             controls
             poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
           >
-            <source
-              src="./assets/videos/video-iDFace-Max.mp4"
-              type="video/mp4"
-            />
+            <source src="./assets/videos/video-iDFace-Max.mp4" type="video/mp4" />
 
             Seu navegador não suporta o elemento de vídeo.
           </video>

@@ -61,32 +61,113 @@
             <div class="modal-body">
               <form id="formularioContato">
                 <div class="form-row">
-                  <input type="text" name="nome" placeholder="Nome*" required />
-                  <input type="email" name="email" placeholder="E-mail*" required />
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      name="nome"
+                      class="form-control"
+                      id="floatingName"
+                      placeholder="Nome"
+                      required
+                    />
+                    <label for="floatingName">Nome</label>
+                  </div>
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      id="floatingEmail"
+                      placeholder="nome@email.com"
+                      required
+                    />
+                    <label for="floatingEmail">Email</label>
+                  </div>
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      name="cnpj"
+                      class="form-control"
+                      id="floatingCNPJ"
+                      placeholder="CNPJ"
+                      required
+                    />
+                    <label for="floatingCNPJ">CNPJ</label>
+                  </div>
+                  <div class="form-floating">
+                    <input
+                      type="tel"
+                      name="telefone"
+                      class="form-control"
+                      id="floatingTelefone"
+                      placeholder="Telefone"
+                      required
+                    />
+                    <label for="floatingTelefone">Telefone</label>
+                  </div>
                 </div>
-                <div class="form-row">
-                  <input type="text" name="cnpj" placeholder="CNPJ*" required />
-                  <input type="text" name="telefone" placeholder="Telefone*" required />
+                
+                <!-- Seção de Produtos com Múltipla Seleção -->
+                <div class="produtos-section">
+                  <label class="produtos-label">Produtos de Interesse:</label>
+                  <div class="produtos-container">
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto1" name="produtos" value="Relógio de Ponto Eletrônico 671" />
+                      <label for="produto1">Relógio de Ponto Eletrônico 671</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto2" name="produtos" value="Relógio de Ponto Eletrônico Facial (com impressão)" />
+                      <label for="produto2">Relógio de Ponto Eletrônico Facial (com impressão)</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto3" name="produtos" value="Controlador de Acesso iDFace" />
+                      <label for="produto3">Controlador de Acesso iDFace</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto4" name="produtos" value="RHiD - Software de Apuração de Ponto" />
+                      <label for="produto4">RHiD - Software de Apuração de Ponto</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto5" name="produtos" value="Catraca Inteligente iDBlock Next" />
+                      <label for="produto5">Catraca Inteligente iDBlock Next</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto6" name="produtos" value="iDSecure Cloud: Controle de Acesso Inteligente na Nuvem" />
+                      <label for="produto6">iDSecure Cloud: Controle de Acesso Inteligente na Nuvem</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto7" name="produtos" value="Controlador de Acesso Multifuncional iDFlex Pro" />
+                      <label for="produto7">Controlador de Acesso Multifuncional iDFlex Pro</label>
+                    </div>
+                    <div class="produto-item">
+                      <input type="checkbox" id="produto8" name="produtos" value="Controlador de Acesso iDFace Max" />
+                      <label for="produto8">Controlador de Acesso iDFace Max</label>
+                    </div>
+                  </div>
+                  <div class="produtos-error" id="produtosError" style="display: none;">
+                    Por favor, selecione pelo menos um produto.
+                  </div>
                 </div>
-                <select name="produto" id="produto" required>
-                  <option value="">Selecione um produto</option>
-                  <option value="1">Relógio de Ponto Eletrônico 671</option>
-                  <option value="2">Relógio de Ponto Eletrônico Facial (com impressão)</option>
-                  <option value="3">Controlador de Acesso iDFace</option>
-                  <option value="4">RHiD - Software de Apuração de Ponto</option>
-                  <option value="5">Catraca Inteligente iDBlock Next</option>
-                  <option value="6">iDSecure Cloud: Controle de Acesso Inteligente na Nuvem</option>
-                  <option value="7">Controlador de Acesso Multifuncional iDFlex Pro</option>
-                  <option value="8">Controlador de Acesso iDFace</option>
-                  <option value="9">Controlador de Acesso iDFace Max</option>
-                </select>
-                <select name="meiocontato" id="meiocontato" required>
-                  <option value="">Como devemos contactá-lo?</option>
-                  <option value="E-Mail">E-Mail</option>
-                  <option value="Whatsapp">Whatsapp</option>
-                  <option value="Telefone">Telefone</option>
-                </select>
-                <textarea name="mensagem" placeholder="Escreva sua mensagem:"></textarea>
+
+                <div class="form-floating">
+                  <select class="form-select" name="meiocontato" id="meiocontato" required>
+                    <option value="">Como devemos contactá-lo?</option>
+                    <option value="E-Mail">E-Mail</option>
+                    <option value="Whatsapp">Whatsapp</option>
+                    <option value="Telefone">Telefone</option>
+                  </select>
+                  <label for="meiocontato">Contato</label>
+                </div>
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    name="mensagem"
+                    id="mensagem"
+                    placeholder="Escreva sua mensagem aqui"
+                    style="height: 100px"
+                  ></textarea>
+                  <label for="mensagem">Tem algo em mente? Escreva aqui:</label>
+                </div>
                 <div class="checkbox-wrapper">
                   <div>
                     <input type="checkbox" id="consent" name="consent" value="Sim" required />

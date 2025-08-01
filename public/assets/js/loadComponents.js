@@ -110,6 +110,47 @@ const smoothEffect = () => {
   })
 }
 
+const initializeSearch = () => {
+  const searchForm = document.querySelector('.search-form')
+  const searchInput = document.querySelector('.search-input')
+  const searchSubmit = document.querySelector('.search-submit')
+  const searchModal = document.getElementById('searchModal')
+
+  if (!searchForm || !searchInput || !searchSubmit) return
+
+  const executeSearch = () => {
+    const query = searchInput.value.trim()
+
+    if (query) {
+      const modal = bootstrap.Modal.getInstance(searchModal)
+      if (modal) modal.hide()
+
+      const currentPath = window.location.pathname
+      const isInPublicFolder = currentPath.includes('/public/')
+      const productsUrl = isInPublicFolder ? '../produtos.html' : './produtos.html'
+
+      window.location.href = `${productsUrl}?search=${encodeURIComponent(query)}`
+    }
+  }
+
+  searchSubmit.addEventListener('click', (e) => {
+    e.preventDefault()
+    executeSearch()
+  })
+
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      executeSearch()
+    }
+  })
+
+  searchModal.addEventListener('shown.bs.modal', () => {
+    searchInput.value = ''
+    searchInput.focus()
+  })
+}
+
 export async function loadComponent(componentName, targetElementId) {
   try {
     console.log(`🔄 Carregando componente: ${componentName}`)
@@ -143,6 +184,7 @@ export async function loadComponent(componentName, targetElementId) {
         headerStyles()
         dropSubmenu()
         smoothEffect()
+        initializeSearch()
       }, 100)
 
       if (componentName === 'forms') {

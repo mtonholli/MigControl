@@ -290,6 +290,12 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1600px) {
+  .container-fluid {
+    padding: 0 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-sobre {
     position: relative;

@@ -17,11 +17,11 @@
 }
 
 .banner-products h1 {
-  font-size: 48px;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin: 0;
   color: var(--color-gray-50);
-  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Categorias */
@@ -46,7 +46,7 @@
 /* Grid */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
@@ -159,11 +159,63 @@
   margin-bottom: 1rem;
 }
 
+/* Estilos para pesquisa */
+@keyframes searchHighlight {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.search-result {
+  transition: all 0.3s ease;
+}
+
+.search-result:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4) !important;
+}
+
+.no-results-message {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search {
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.3s ease;
+}
+
+.clear-search:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white !important;
+}
+
+/* Ocultar seções sem resultados */
+.product-category[style*='none'] {
+  display: none !important;
+}
+
 /* Responsividade */
+@media (max-width: 1600px) {
+  .product-category .container-fluid,
+  .banner-products .container-fluid {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
 @media (max-width: 992px) {
   .product-category .container-fluid,
   .banner-products .container-fluid {
-    padding: 20px 20px 0;
+    padding: 60px 10px;
   }
 
   #ponto-eletronico {
@@ -179,7 +231,9 @@
 @media (max-width: 768px) {
   .banner-products {
     min-height: 200px;
+    padding: 30px 10px 0;
   }
+
   .banner-products h1 {
     font-size: 36px;
   }

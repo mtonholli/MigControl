@@ -103,7 +103,6 @@ hr {
   text-decoration: none;
 }
 
-
 .footer-content .about {
   max-width: 550px;
 }
@@ -171,6 +170,12 @@ hr {
 }
 
 /* ===== RESPONSIVIDADE ESPECÍFICA ===== */
+@media (max-width: 1600px) {
+  .footer-bg .container-fluid {
+    padding: 80px 100px 40px;
+  }
+}
+
 @media (max-width: 1200px) {
   .footer-bg {
     border-radius: 60px 60px 0 0;

@@ -402,6 +402,20 @@
 }
 
 /* ================= RESPONSIVIDADE ================= */
+@media (max-width: 1600px) {
+  .carousel-caption {
+    padding: 50px 100px 0;
+  }
+
+  .product-spacing {
+    padding: 20px 100px;
+  }
+
+  .produtos-destaque {
+    padding: 80px 100px;
+  }
+}
+
 @media (max-width: 1200px) {
   .produtos-destaque,
   .product-category .container-fluid,
@@ -419,18 +433,18 @@
     background-size: 15px 15px;
   }
 
-  
   .carousel-control-prev {
     left: 10px;
   }
-  
+
   .carousel-control-next {
     right: 10px;
   }
-  
-  .carousel-inner, .carousel-item {
+
+  .carousel-inner,
+  .carousel-item {
     height: 82vh;
- }
+  }
 
   .carousel-item img {
     height: 100%;
@@ -440,8 +454,8 @@
   }
 
   .carousel-caption {
-  padding: 30px 30px 0;
-}
+    padding: 30px 30px 0;
+  }
 
   .carousel-caption h1 {
     font-size: 1.8rem;
@@ -453,7 +467,7 @@
   }
 
   .carousel-caption p {
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.15rem;
     text-align: left;
   }
@@ -520,7 +534,7 @@
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .banner.about .titulo {
     width: 100%;
   }
