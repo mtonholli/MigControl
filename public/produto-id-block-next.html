@@ -1,257 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catraca Inteligente iDBlock Next</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Catraca Inteligente iDBlock Next</title>
+		<link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/produto.css" />
-    <link rel="stylesheet" href="assets/css/cards.css" />
-  </head>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS Files -->
+		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/produto.css" />
+		<link rel="stylesheet" href="assets/css/cards.css" />
+	</head>
 
-  <body>
-    <!-- Header -->
-    <div id="header"></div>
+	<body>
+		<!-- Header -->
+		<div id="header"></div>
 
-    <!-- Seção Hero -->
-    <header class="hero">
-      <div class="container-fluid">
-        <div class="hero-content">
-          <h2>Catraca Inteligente iDBlock Next</h2>
-          <h1>Controle de acesso revolucionário com reconhecimento facial.</h1>
-          <p>
-            Design único, até dois iDFaces para controle de entrada e saída, mecanismo inovador e
-            operação stand alone. O iDBlock Next está pronto para o futuro do controle de acesso.
-          </p>
-          <div class="hero-buttons">
-            <button
-              id="toggleFormBtn"
-              data-bs-toggle="modal"
-              data-bs-target="#formModal"
-              class="button button-blue"
-            >
-              Fale com um especialista >
-            </button>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img
-            src="assets/images/produtos/iDBlock-Next-Completo.png"
-            alt="Catraca Inteligente iDBlock Next"
-          />
-          <hr />
-          <img
-            src="assets/images/produtos/iDBlock-Next.png"
-            alt="Catraca Inteligente iDBlock Next"
-          />
-        </div>
-      </div>
-    </header>
+		<!-- Seção Hero -->
+		<header class="hero">
+			<div class="container-fluid">
+				<div class="hero-content">
+					<h2>Catraca Inteligente iDBlock Next</h2>
+					<h1>Controle de acesso revolucionário com reconhecimento facial.</h1>
+					<p>
+						Design único, até dois iDFaces para controle de entrada e saída,
+						mecanismo inovador e operação stand alone. O iDBlock Next está
+						pronto para o futuro do controle de acesso.
+					</p>
+					<div class="hero-buttons">
+						<button
+							id="toggleFormBtn"
+							data-bs-toggle="modal"
+							data-bs-target="#formModal"
+							class="button button-blue"
+						>
+							Fale com um especialista >
+						</button>
+					</div>
+				</div>
+				<div class="hero-image">
+					<img
+						src="assets/images/produtos/iDBlock-Next-Completo.png"
+						alt="Catraca Inteligente iDBlock Next"
+					/>
+					<hr />
+					<img
+						src="assets/images/produtos/iDBlock-Next.png"
+						alt="Catraca Inteligente iDBlock Next"
+					/>
+				</div>
+			</div>
+		</header>
 
-    <!-- Seção "Por que escolher?" -->
-    <section class="features-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Por que escolher o iDBlock Next?</h2>
-          <p>Inovação e segurança para o controle de acesso da sua empresa.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-item">
-            <img src="assets/icons/icon-facial.png" alt="Reconhecimento Facial" />
-            <h3>Reconhecimento Facial Avançado</h3>
-            <p>Identificação rápida e precisa com tecnologia de ponta</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/turnstiles.png" alt="Controle Duplo" />
-            <h3>Controle Duplo de Acesso</h3>
-            <p>Gerencie entrada e saída com até dois iDFaces, garantindo segurança total</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/icon-catraca.png" alt="Mecanismo" />
-            <h3>Mecanismo Revolucionário</h3>
-            <p>Durabilidade superior a 800.000 giros e operação silenciosa</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/icon-software-acessos.png" alt="Operação Flexível" />
-            <h3>Operação Flexível</h3>
-            <p>
-              Stand alone com software web embarcado, sem necessidade de instalação adicional, ou
-              online
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/innovation.png" alt="Design Moderno" />
-            <h3>Design Moderno e Inovador</h3>
-            <p>Integra-se perfeitamente a qualquer ambiente interno</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/icon-software-apura.png" alt="Software Integrado" />
-            <h3>Software Web Integrado</h3>
-            <p>Gerenciamento completo via navegador, sem necessidade de instalações adicionais</p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Seção "Por que escolher?" -->
+		<section class="features-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Por que escolher o iDBlock Next?</h2>
+					<p>Inovação e segurança para o controle de acesso da sua empresa.</p>
+				</div>
+				<div class="features-grid">
+					<div class="feature-item">
+						<img
+							src="assets/icons/icon-facial.png"
+							alt="Reconhecimento Facial"
+						/>
+						<h3>Reconhecimento Facial Avançado</h3>
+						<p>Identificação rápida e precisa com tecnologia de ponta</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/turnstiles.png" alt="Controle Duplo" />
+						<h3>Controle Duplo de Acesso</h3>
+						<p>
+							Gerencie entrada e saída com até dois iDFaces, garantindo
+							segurança total
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/icon-catraca.png" alt="Mecanismo" />
+						<h3>Mecanismo Revolucionário</h3>
+						<p>Durabilidade superior a 800.000 giros e operação silenciosa</p>
+					</div>
+					<div class="feature-item">
+						<img
+							src="assets/icons/icon-software-acessos.png"
+							alt="Operação Flexível"
+						/>
+						<h3>Operação Flexível</h3>
+						<p>
+							Stand alone com software web embarcado, sem necessidade de
+							instalação adicional, ou online
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/innovation.png" alt="Design Moderno" />
+						<h3>Design Moderno e Inovador</h3>
+						<p>Integra-se perfeitamente a qualquer ambiente interno</p>
+					</div>
+					<div class="feature-item">
+						<img
+							src="assets/icons/icon-software-apura.png"
+							alt="Software Integrado"
+						/>
+						<h3>Software Web Integrado</h3>
+						<p>
+							Gerenciamento completo via navegador, sem necessidade de
+							instalações adicionais
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção "Veja em Ação" -->
-    <section class="video-section">
-      <div class="container-fluid">
-        <div class="video-container">
-          <video
-            controls
-            poster="./assets/images/banners/review-iDBlockNext.png"
-          >
-            <source src="./assets/videos/video-iDBlock-Next.mp4" type="video/mp4" />
+		<!-- Seção "Veja em Ação" -->
+		<section class="video-section">
+			<div class="container-fluid">
+				<div class="video-container">
+					<video
+						controls
+						poster="./assets/images/banners/review-iDBlockNext.png"
+					>
+						<source
+							src="./assets/videos/video-iDBlock-Next.mp4"
+							type="video/mp4"
+						/>
 
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-        <div class="section-header">
-          <h2>Entenda como o iDBlock Next simplifica o controle de acesso</h2>
-          <p>
-            A catraca iDBlock Next oferece um controle de acesso revolucionário com seu design único
-            e a possibilidade de instalar até dois iDFaces, controlando tanto a entrada quanto a
-            saída de pessoas através da tecnologia de reconhecimento facial. O equipamento também
-            permite a operação com um leitor de impressão digital opcional e pode ser utilizado em
-            qualquer tipo de ambiente interno. Além disso, opera de forma totalmente stand alone por
-            meio do software web embarcado, eliminando a necessidade de software adicional.
-          </p>
-        </div>
-      </div>
-    </section>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+				<div class="section-header">
+					<h2>Entenda como o iDBlock Next simplifica o controle de acesso</h2>
+					<p>
+						A catraca iDBlock Next oferece um controle de acesso revolucionário
+						com seu design único e a possibilidade de instalar até dois iDFaces,
+						controlando tanto a entrada quanto a saída de pessoas através da
+						tecnologia de reconhecimento facial. O equipamento também permite a
+						operação com um leitor de impressão digital opcional e pode ser
+						utilizado em qualquer tipo de ambiente interno. Além disso, opera de
+						forma totalmente stand alone por meio do software web embarcado,
+						eliminando a necessidade de software adicional.
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Detalhes Técnicos -->
-    <section class="tech-details">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Detalhes Técnicos</h2>
-        </div>
-        <div class="tech-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Especificações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Controle de Pessoas</strong></td>
-                <td>
-                  Definição do sentido de liberação do giro e confirmação de passagem, Anti
-                  Dupla-Entrada, Urna Coletora (opcional)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Usuários</strong></td>
-                <td>Capacidade para mais de 200.000 usuários cadastrados</td>
-              </tr>
-              <tr>
-                <td><strong>Faces</strong></td>
-                <td>
-                  Capacidade para até 3.000 (Lite) / 10.000 (Pro) faces com detecção de rosto vivo
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Digitais</strong></td>
-                <td>Capacidade para até 10.000 digitais</td>
-              </tr>
-              <tr>
-                <td><strong>Mecanismo</strong></td>
-                <td>Durabilidade: > 800.000 giros, Mecanismo silencioso</td>
-              </tr>
-              <tr>
-                <td><strong>Identificação</strong></td>
-                <td>
-                  Reconhecimento Facial (Duas câmeras HD 1080p em cada iDFace), Cartões de
-                  Proximidade (MIFARE ™/ 125 kHz ASK), Leitor de Impressão Digital (óptico de 500
-                  DPI), Senha, QR Code
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Comunicação</strong></td>
-                <td>
-                  Ethernet (1 porta 10/100Mbps), GPRS (opcional), Wi-Fi (opcional), USB (1 porta
-                  Host 2.0), Interfone SIP (versão Pro)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Interface</strong></td>
-                <td>
-                  Tela LCD Touchscreen (base) 3.5" (320x480) capacitiva, Tela LCD Touchscreen em
-                  cada iDFace 3.5" (320x480) capacitiva, Software Web Integrado, Áudio (Alto-falante
-                  e microfone embutidos)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Dimensões</strong></td>
-                <td>704 mm x 1367 mm x 658 mm (P x A x L)</td>
-              </tr>
-              <tr>
-                <td><strong>Alimentação</strong></td>
-                <td>Fonte interna de 12V/2A incluída</td>
-              </tr>
-              <tr>
-                <td><strong>Consumo</strong></td>
-                <td>3,5W (300mA) nominal</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+		<!-- Seção Detalhes Técnicos -->
+		<section class="tech-details">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Detalhes Técnicos</h2>
+				</div>
+				<div class="tech-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Especificações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Controle de Pessoas</strong></td>
+								<td>
+									Definição do sentido de liberação do giro e confirmação de
+									passagem, Anti Dupla-Entrada, Urna Coletora (opcional)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Usuários</strong></td>
+								<td>Capacidade para mais de 200.000 usuários cadastrados</td>
+							</tr>
+							<tr>
+								<td><strong>Faces</strong></td>
+								<td>
+									Capacidade para até 3.000 (Lite) / 10.000 (Pro) faces com
+									detecção de rosto vivo
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Digitais</strong></td>
+								<td>Capacidade para até 10.000 digitais</td>
+							</tr>
+							<tr>
+								<td><strong>Mecanismo</strong></td>
+								<td>Durabilidade: > 800.000 giros, Mecanismo silencioso</td>
+							</tr>
+							<tr>
+								<td><strong>Identificação</strong></td>
+								<td>
+									Reconhecimento Facial (Duas câmeras HD 1080p em cada iDFace),
+									Cartões de Proximidade (MIFARE ™/ 125 kHz ASK), Leitor de
+									Impressão Digital (óptico de 500 DPI), Senha, QR Code
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Comunicação</strong></td>
+								<td>
+									Ethernet (1 porta 10/100Mbps), GPRS (opcional), Wi-Fi
+									(opcional), USB (1 porta Host 2.0), Interfone SIP (versão Pro)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Interface</strong></td>
+								<td>
+									Tela LCD Touchscreen (base) 3.5" (320x480) capacitiva, Tela
+									LCD Touchscreen em cada iDFace 3.5" (320x480) capacitiva,
+									Software Web Integrado, Áudio (Alto-falante e microfone
+									embutidos)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Dimensões</strong></td>
+								<td>704 mm x 1367 mm x 658 mm (P x A x L)</td>
+							</tr>
+							<tr>
+								<td><strong>Alimentação</strong></td>
+								<td>Fonte interna de 12V/2A incluída</td>
+							</tr>
+							<tr>
+								<td><strong>Consumo</strong></td>
+								<td>3,5W (300mA) nominal</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Downloads -->
-    <section class="downloads">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Download de materiais</h2>
-        </div>
-        <div class="downloads-links">
-          <div class="download-item">
-            <img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
-            <p>Baixar catálogo técnico (PDF)</p>
-            <a href="assets/pdfs/idblock-next-datasheet.pdf">
-              <i class="fa-solid fa-download"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Seção Downloads -->
+		<section class="downloads">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Download de materiais</h2>
+				</div>
+				<div class="downloads-links">
+					<div class="download-item">
+						<img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
+						<p>Baixar catálogo técnico (PDF)</p>
+						<a href="assets/pdfs/idblock-next-datasheet.pdf" target="_blank">
+							<i class="fa-solid fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Formulário e Footer -->
-    <div id="forms"></div>
-    <div id="footer"></div>
+		<!-- Formulário e Footer -->
+		<div id="forms"></div>
+		<div id="footer"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script type="module" src="assets/js/loadComponents.js"></script>
-    <script src="./assets/js/cards.js"></script>
-  </body>
+		<!-- Custom JS -->
+		<script type="module" src="assets/js/loadComponents.js"></script>
+		<script src="./assets/js/cards.js"></script>
+	</body>
 </html>
