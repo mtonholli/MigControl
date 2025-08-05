@@ -206,7 +206,6 @@
   background-color: white;
   border: 1px solid var(--color-gray-200);
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .produto-item:hover {
@@ -225,7 +224,6 @@
 
 .produto-item label {
   margin: 0;
-  cursor: pointer;
   font-size: 0.9rem;
   color: var(--color-gray-800);
   line-height: 1.3;

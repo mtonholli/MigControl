@@ -1,279 +1,320 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Software para Controle de Acesso iDSecure Cloud</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Software para Controle de Acesso iDSecure Cloud</title>
+		<link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/produto.css" />
-    <link rel="stylesheet" href="assets/css/cards.css" />
-  </head>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS Files -->
+		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/produto.css" />
+		<link rel="stylesheet" href="assets/css/cards.css" />
+	</head>
 
-  <body>
-    <!-- Header -->
-    <div id="header"></div>
+	<body>
+		<!-- Header -->
+		<div id="header"></div>
 
-    <!-- Seção Hero -->
-    <header class="hero">
-      <div class="container-fluid">
-        <div class="hero-content">
-          <h2>iDSecure Cloud: Controle de Acesso Inteligente na Nuvem</h2>
-          <h1>Gerencie o acesso de pessoas e veículos com simplicidade e segurança.</h1>
-          <p>
-            A plataforma iDSecure Cloud da Control iD revoluciona o controle de acesso para empresas
-            de todos os tamanhos. Configure equipamentos de forma intuitiva, gerencie acessos de
-            maneira ágil e segura, tudo através de um sistema 100% em nuvem acessível por navegador
-            ou aplicativo.
-          </p>
-          <div class="hero-buttons">
-            <button
-              id="toggleFormBtn"
-              data-bs-toggle="modal"
-              data-bs-target="#formModal"
-              class="button button-blue"
-            >
-              Solicite uma demonstração >
-            </button>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="assets/images/produtos/iDSecure-Cloud.png" alt="Software iDSecure Cloud" />
-        </div>
-      </div>
-    </header>
+		<!-- Seção Hero -->
+		<header class="hero">
+			<div class="container-fluid">
+				<div class="hero-content">
+					<h2>iDSecure Cloud: Controle de Acesso Inteligente na Nuvem</h2>
+					<h1>
+						Gerencie o acesso de pessoas e veículos com simplicidade e
+						segurança.
+					</h1>
+					<p>
+						A plataforma iDSecure Cloud da Control iD revoluciona o controle de
+						acesso para empresas de todos os tamanhos. Configure equipamentos de
+						forma intuitiva, gerencie acessos de maneira ágil e segura, tudo
+						através de um sistema 100% em nuvem acessível por navegador ou
+						aplicativo.
+					</p>
+					<div class="hero-buttons">
+						<button
+							id="toggleFormBtn"
+							data-bs-toggle="modal"
+							data-bs-target="#formModal"
+							class="button button-blue"
+						>
+							Solicite uma demonstração >
+						</button>
+					</div>
+				</div>
+				<div class="hero-image">
+					<img
+						src="assets/images/produtos/iDSecure-Cloud.png"
+						alt="Software iDSecure Cloud"
+					/>
+				</div>
+			</div>
+		</header>
 
-    <!-- Seção "Por que escolher?" -->
-    <section class="features-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Por que escolher o iDSecure Cloud?</h2>
-          <p>Controle total, onde quer que você esteja.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-item">
-            <img src="assets/icons/cloud-network.png" alt="Sistema em Nuvem" />
-            <h3>Sistema 100% em Nuvem</h3>
-            <p>
-              Acesse e gerencie de qualquer lugar, a qualquer hora, sem necessidade de
-              infraestrutura local complexa
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
-            <h3>Regras de Acesso Customizáveis</h3>
-            <p>Crie regras flexíveis baseadas em empresas, grupos, horários e tipos de usuários</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/smartphone.png" alt="App Mobile" />
-            <h3>App para Celular</h3>
-            <p>
-              Cadastre visitantes, realize aberturas remotas e visualize logs de acesso diretamente
-              do seu smartphone
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/icon-software-acessos.png" alt="Monitoramento" />
-            <h3>Monitoramento em Tempo Real</h3>
-            <p>Acompanhe todos os eventos de acesso instantaneamente, garantindo maior segurança</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/statistics.png" alt="Relatórios" />
-            <h3>Relatórios Customizáveis</h3>
-            <p>
-              Gere relatórios detalhados para análises precisas e tomada de decisões estratégicas
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/responsive-app.png" alt="Interface" />
-            <h3>Interface Moderna e Intuitiva</h3>
-            <p>
-              Experiência de uso simplificada tanto para gestores quanto para profissionais de
-              segurança
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Seção "Por que escolher?" -->
+		<section class="features-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Por que escolher o iDSecure Cloud?</h2>
+					<p>Controle total, onde quer que você esteja.</p>
+				</div>
+				<div class="features-grid">
+					<div class="feature-item">
+						<img src="assets/icons/cloud-network.png" alt="Sistema em Nuvem" />
+						<h3>Sistema 100% em Nuvem</h3>
+						<p>
+							Acesse e gerencie de qualquer lugar, a qualquer hora, sem
+							necessidade de infraestrutura local complexa
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
+						<h3>Regras de Acesso Customizáveis</h3>
+						<p>
+							Crie regras flexíveis baseadas em empresas, grupos, horários e
+							tipos de usuários
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/smartphone.png" alt="App Mobile" />
+						<h3>App para Celular</h3>
+						<p>
+							Cadastre visitantes, realize aberturas remotas e visualize logs de
+							acesso diretamente do seu smartphone
+						</p>
+					</div>
+					<div class="feature-item">
+						<img
+							src="assets/icons/icon-software-acessos.png"
+							alt="Monitoramento"
+						/>
+						<h3>Monitoramento em Tempo Real</h3>
+						<p>
+							Acompanhe todos os eventos de acesso instantaneamente, garantindo
+							maior segurança
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/statistics.png" alt="Relatórios" />
+						<h3>Relatórios Customizáveis</h3>
+						<p>
+							Gere relatórios detalhados para análises precisas e tomada de
+							decisões estratégicas
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/responsive-app.png" alt="Interface" />
+						<h3>Interface Moderna e Intuitiva</h3>
+						<p>
+							Experiência de uso simplificada tanto para gestores quanto para
+							profissionais de segurança
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção "Como funciona" -->
-    <section class="video-section">
-      <div class="container-fluid">
-        <div class="video-container">
-          <video
-            controls
-            poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
-          >
-            <source src="./assets/videos/video-iDSecure-Cloud.mp4" type="video/mp4" />
+		<!-- Seção "Como funciona" -->
+		<section class="video-section">
+			<div class="container-fluid">
+				<div class="video-container">
+					<video
+						controls
+						poster="./assets/images/banners/review-iDSecureCloud.png"
+					>
+						<source
+							src="./assets/videos/video-iDSecure-Cloud.mp4"
+							type="video/mp4"
+						/>
 
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-        <div class="section-header">
-          <h2>Descubra a facilidade de gerenciar o controle de acesso com o iDSecure Cloud</h2>
-          <p>
-            O iDSecure Cloud foi projetado com foco na usabilidade. Configure seus controladores de
-            acesso Control iD (iDFace, iDFit, iDBox, iDBlock) de forma nativa e simples. Utilize o
-            software em nuvem ou o aplicativo móvel para gerenciar acessos, cadastrar visitantes,
-            definir regras complexas e gerar relatórios detalhados. A integração via API oferece
-            ainda mais versatilidade para suas necessidades.
-          </p>
-        </div>
-      </div>
-    </section>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+				<div class="section-header">
+					<h2>
+						Descubra a facilidade de gerenciar o controle de acesso com o
+						iDSecure Cloud
+					</h2>
+					<p>
+						O iDSecure Cloud foi projetado com foco na usabilidade. Configure
+						seus controladores de acesso Control iD (iDFace, iDFit, iDBox,
+						iDBlock) de forma nativa e simples. Utilize o software em nuvem ou o
+						aplicativo móvel para gerenciar acessos, cadastrar visitantes,
+						definir regras complexas e gerar relatórios detalhados. A integração
+						via API oferece ainda mais versatilidade para suas necessidades.
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Funcionalidades -->
-    <section class="tech-details">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Funcionalidades Principais</h2>
-        </div>
-        <div class="tech-table">
-          <table>
-            <tbody>
-              <tr>
-                <td><strong>Monitoramento em Tempo Real</strong></td>
-                <td>Acompanhe todos os eventos de acesso instantaneamente</td>
-              </tr>
-              <tr>
-                <td><strong>Relatórios Customizáveis</strong></td>
-                <td>Gere relatórios detalhados para análises precisas</td>
-              </tr>
-              <tr>
-                <td><strong>Regras de Acesso Complexas</strong></td>
-                <td>Defina permissões por empresas, grupos, horários e tipos de usuários</td>
-              </tr>
-              <tr>
-                <td><strong>Integração via API</strong></td>
-                <td>Versatilidade e segurança para desenvolver aplicações personalizadas</td>
-              </tr>
-              <tr>
-                <td><strong>Plataforma WEB</strong></td>
-                <td>Acesse de qualquer navegador, sem necessidade de instalação</td>
-              </tr>
-              <tr>
-                <td><strong>Cadastro de Visitantes pelo App</strong></td>
-                <td>Agilize o processo de entrada de visitantes</td>
-              </tr>
-              <tr>
-                <td><strong>Cadastro Remoto</strong></td>
-                <td>Gerencie usuários e permissões de onde estiver</td>
-              </tr>
-              <tr>
-                <td><strong>Controle de Visitantes</strong></td>
-                <td>Mantenha um registro completo e seguro dos acessos de visitantes</td>
-              </tr>
-              <tr>
-                <td><strong>Acesso Multiusuário</strong></td>
-                <td>
-                  Permita que múltiplos operadores gerenciem o sistema com diferentes níveis de
-                  permissão
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Abertura Remota</strong></td>
-                <td>Libere acessos de forma remota através do aplicativo</td>
-              </tr>
-              <tr>
-                <td><strong>Aplicativo para Celular</strong></td>
-                <td>Todas as funcionalidades na palma da sua mão</td>
-              </tr>
-              <tr>
-                <td><strong>Equipamentos Ilimitados</strong></td>
-                <td>Gerencie quantos dispositivos forem necessários</td>
-              </tr>
-              <tr>
-                <td><strong>Atualizações Automáticas</strong></td>
-                <td>
-                  Mantenha seu sistema sempre atualizado com as últimas funcionalidades e correções
-                  de segurança
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Liberação em Modo de Contingência</strong></td>
-                <td>Garanta o funcionamento mesmo em caso de falhas de comunicação</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+		<!-- Seção Funcionalidades -->
+		<section class="tech-details">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Funcionalidades Principais</h2>
+				</div>
+				<div class="tech-table">
+					<table>
+						<tbody>
+							<tr>
+								<td><strong>Monitoramento em Tempo Real</strong></td>
+								<td>Acompanhe todos os eventos de acesso instantaneamente</td>
+							</tr>
+							<tr>
+								<td><strong>Relatórios Customizáveis</strong></td>
+								<td>Gere relatórios detalhados para análises precisas</td>
+							</tr>
+							<tr>
+								<td><strong>Regras de Acesso Complexas</strong></td>
+								<td>
+									Defina permissões por empresas, grupos, horários e tipos de
+									usuários
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Integração via API</strong></td>
+								<td>
+									Versatilidade e segurança para desenvolver aplicações
+									personalizadas
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Plataforma WEB</strong></td>
+								<td>
+									Acesse de qualquer navegador, sem necessidade de instalação
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Cadastro de Visitantes pelo App</strong></td>
+								<td>Agilize o processo de entrada de visitantes</td>
+							</tr>
+							<tr>
+								<td><strong>Cadastro Remoto</strong></td>
+								<td>Gerencie usuários e permissões de onde estiver</td>
+							</tr>
+							<tr>
+								<td><strong>Controle de Visitantes</strong></td>
+								<td>
+									Mantenha um registro completo e seguro dos acessos de
+									visitantes
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Acesso Multiusuário</strong></td>
+								<td>
+									Permita que múltiplos operadores gerenciem o sistema com
+									diferentes níveis de permissão
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Abertura Remota</strong></td>
+								<td>Libere acessos de forma remota através do aplicativo</td>
+							</tr>
+							<tr>
+								<td><strong>Aplicativo para Celular</strong></td>
+								<td>Todas as funcionalidades na palma da sua mão</td>
+							</tr>
+							<tr>
+								<td><strong>Equipamentos Ilimitados</strong></td>
+								<td>Gerencie quantos dispositivos forem necessários</td>
+							</tr>
+							<tr>
+								<td><strong>Atualizações Automáticas</strong></td>
+								<td>
+									Mantenha seu sistema sempre atualizado com as últimas
+									funcionalidades e correções de segurança
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Liberação em Modo de Contingência</strong></td>
+								<td>
+									Garanta o funcionamento mesmo em caso de falhas de comunicação
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Integração -->
-    <section class="video-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Conectividade e Integração Simplificadas</h2>
-          <p>
-            Todos os controladores de acesso da Control iD (iDFace, iDFit, iDBox, iDBlock) são
-            nativamente integrados ao iDSecure Cloud, facilitando o gerenciamento. O sistema também
-            permite a integração com cadastradores de cartão e/ou biometria para PC, além de
-            oferecer uma API robusta para integrações customizadas.
-          </p>
-        </div>
-        <div class="video-container">
-          <video
-            controls
-            poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
-          >
-            <source src="./assets/videos/video-iDSecure-Cloud-app.mp4" type="video/mp4" />
+		<!-- Seção Integração -->
+		<section class="video-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Conectividade e Integração Simplificadas</h2>
+					<p>
+						Todos os controladores de acesso da Control iD (iDFace, iDFit,
+						iDBox, iDBlock) são nativamente integrados ao iDSecure Cloud,
+						facilitando o gerenciamento. O sistema também permite a integração
+						com cadastradores de cartão e/ou biometria para PC, além de oferecer
+						uma API robusta para integrações customizadas.
+					</p>
+				</div>
+				<div class="video-container">
+					<video
+						controls
+						poster="./assets/images/banners/app-iDSecureCloud.png"
+					>
+						<source
+							src="./assets/videos/video-iDSecure-Cloud-app.mp4"
+							type="video/mp4"
+						/>
 
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-      </div>
-    </section>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Downloads -->
-    <section class="downloads">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Download de materiais</h2>
-        </div>
-        <div class="downloads-links">
-          <div class="download-item">
-            <img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
-            <p>Baixar Datasheet (PDF)</p>
-            <a href="assets/pdfs/idsecure-cloud-datasheet.pdf">
-              <i class="fa-solid fa-download"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Seção Downloads -->
+		<section class="downloads">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Download de materiais</h2>
+				</div>
+				<div class="downloads-links">
+					<div class="download-item">
+						<img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
+						<p>Baixar Datasheet (PDF)</p>
+						<a href="assets/pdfs/idsecure-cloud-datasheet.pdf">
+							<i class="fa-solid fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Formulário e Footer -->
-    <div id="forms"></div>
-    <div id="footer"></div>
+		<!-- Formulário e Footer -->
+		<div id="forms"></div>
+		<div id="footer"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script type="module" src="assets/js/loadComponents.js"></script>
-    <script src="./assets/js/cards.js"></script>
-  </body>
+		<!-- Custom JS -->
+		<script type="module" src="assets/js/loadComponents.js"></script>
+		<script src="./assets/js/cards.js"></script>
+	</body>
 </html>

@@ -1,280 +1,300 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controlador de Acesso iDFace Max</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Controlador de Acesso iDFace Max</title>
+		<link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/produto.css" />
-    <link rel="stylesheet" href="assets/css/cards.css" />
-  </head>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS Files -->
+		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/produto.css" />
+		<link rel="stylesheet" href="assets/css/cards.css" />
+	</head>
 
-  <body>
-    <!-- Header -->
-    <div id="header"></div>
+	<body>
+		<!-- Header -->
+		<div id="header"></div>
 
-    <!-- Seção Hero -->
-    <header class="hero">
-      <div class="container-fluid">
-        <div class="hero-content">
-          <h2>Controlador de Acesso iDFace Max</h2>
-          <h1>Reconhecimento facial avançado para controle de acesso.</h1>
-          <p>
-            Com design moderno e elegante, o iDFace Max é a solução ideal para monitorar e controlar
-            a entrada e saída de pessoas com tecnologia de reconhecimento facial. Algoritmo
-            avançado, câmeras de alta qualidade e identificação de até 100.000 faces com detecção de
-            rostos vivos, mesmo com máscara.
-          </p>
-          <div class="hero-buttons">
-            <button
-              id="toggleFormBtn"
-              data-bs-toggle="modal"
-              data-bs-target="#formModal"
-              class="button button-blue"
-            >
-              Fale com um especialista >
-            </button>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="assets/images/produtos/iDFace-Max.png" alt="Controlador de Acesso iDFace Max" />
-          <hr />
-          <img
-            src="assets/images/produtos/iDFace-Max-Frontal.png"
-            alt="Controlador de Acesso iDFace Max"
-          />
-        </div>
-      </div>
-    </header>
+		<!-- Seção Hero -->
+		<header class="hero">
+			<div class="container-fluid">
+				<div class="hero-content">
+					<h2>Controlador de Acesso iDFace Max</h2>
+					<h1>Reconhecimento facial avançado para controle de acesso.</h1>
+					<p>
+						Com design moderno e elegante, o iDFace Max é a solução ideal para
+						monitorar e controlar a entrada e saída de pessoas com tecnologia de
+						reconhecimento facial. Algoritmo avançado, câmeras de alta qualidade
+						e identificação de até 100.000 faces com detecção de rostos vivos,
+						mesmo com máscara.
+					</p>
+					<div class="hero-buttons">
+						<button
+							id="toggleFormBtn"
+							data-bs-toggle="modal"
+							data-bs-target="#formModal"
+							class="button button-blue"
+						>
+							Fale com um especialista >
+						</button>
+					</div>
+				</div>
+				<div class="hero-image">
+					<img
+						src="assets/images/produtos/iDFace-Max.png"
+						alt="Controlador de Acesso iDFace Max"
+					/>
+					<hr />
+					<img
+						src="assets/images/produtos/iDFace-Max-Frontal.png"
+						alt="Controlador de Acesso iDFace Max"
+					/>
+				</div>
+			</div>
+		</header>
 
-    <!-- Seção "Por que escolher?" -->
-    <section class="features-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Por que escolher o iDFace Max?</h2>
-          <p>Segurança, tecnologia e design em um único dispositivo.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-item">
-            <img src="assets/icons/icon-facial.png" alt="Identificação Facial" />
-            <h3>Identificação Facial de Alta Capacidade</h3>
-            <p>
-              Reconhecimento de até 100.000 faces com detecção de rosto vivo, garantindo segurança e
-              eficiência
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/smartphone.png" alt="Display Touchscreen" />
-            <h3>Display Touchscreen de 7"</h3>
-            <p>
-              Navegação fácil e intuitiva para configuração de regras de acesso e visualização de
-              relatórios
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/touchscreen.png" alt="Grau de Proteção" />
-            <h3>Grau de Proteção IP65</h3>
-            <p>
-              Ideal para ambientes internos e externos cobertos, garantindo durabilidade e
-              resistência
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
-            <h3>Regras de Acesso Personalizadas</h3>
-            <p>
-              Defina regras por grupos e horários, adaptando o controle de acesso às necessidades da
-              sua empresa
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/interactive.png" alt="Interfone SIP" />
-            <h3>Interfone SIP Integrado</h3>
-            <p>Comunicação facilitada e integrada ao sistema de controle de acesso</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/multi-channel.png" alt="Múltiplas Comunicações" />
-            <h3>Múltiplas Formas de Comunicação</h3>
-            <p>
-              Conectividade via TCP/IP, USB, Wi-Fi e Bluetooth para flexibilidade na instalação e
-              uso
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Seção "Por que escolher?" -->
+		<section class="features-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Por que escolher o iDFace Max?</h2>
+					<p>Segurança, tecnologia e design em um único dispositivo.</p>
+				</div>
+				<div class="features-grid">
+					<div class="feature-item">
+						<img
+							src="assets/icons/icon-facial.png"
+							alt="Identificação Facial"
+						/>
+						<h3>Identificação Facial de Alta Capacidade</h3>
+						<p>
+							Reconhecimento de até 100.000 faces com detecção de rosto vivo,
+							garantindo segurança e eficiência
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/smartphone.png" alt="Display Touchscreen" />
+						<h3>Display Touchscreen de 7"</h3>
+						<p>
+							Navegação fácil e intuitiva para configuração de regras de acesso
+							e visualização de relatórios
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/touchscreen.png" alt="Grau de Proteção" />
+						<h3>Grau de Proteção IP65</h3>
+						<p>
+							Ideal para ambientes internos e externos cobertos, garantindo
+							durabilidade e resistência
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
+						<h3>Regras de Acesso Personalizadas</h3>
+						<p>
+							Defina regras por grupos e horários, adaptando o controle de
+							acesso às necessidades da sua empresa
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/interactive.png" alt="Interfone SIP" />
+						<h3>Interfone SIP Integrado</h3>
+						<p>
+							Comunicação facilitada e integrada ao sistema de controle de
+							acesso
+						</p>
+					</div>
+					<div class="feature-item">
+						<img
+							src="assets/icons/multi-channel.png"
+							alt="Múltiplas Comunicações"
+						/>
+						<h3>Múltiplas Formas de Comunicação</h3>
+						<p>
+							Conectividade via TCP/IP, USB, Wi-Fi e Bluetooth para
+							flexibilidade na instalação e uso
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção "Veja em Ação" -->
-    <section class="video-section">
-      <div class="container-fluid">
-        <div class="video-container">
-          <video
-            controls
-            poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
-          >
-            <source src="./assets/videos/video-iDFace-Max.mp4" type="video/mp4" />
+		<!-- Seção "Veja em Ação" -->
+		<section class="video-section">
+			<div class="container-fluid">
+				<div class="video-container">
+					<video controls poster="./assets/images/banners/review-iDFaceMax.png">
+						<source
+							src="./assets/videos/video-iDFace-Max.mp4"
+							type="video/mp4"
+						/>
 
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-        <div class="section-header">
-          <h2>Veja o iDFace Max em ação</h2>
-          <p>
-            O iDFace Max oferece um controle de acesso robusto e inteligente. Seu algoritmo avançado
-            e câmeras de alta qualidade permitem a identificação rápida e precisa de até 100.000
-            faces, com detecção de rostos vivos e capacidade de identificar usuários com ou sem
-            máscara. O amplo display touchscreen de 7'' facilita a configuração de regras de acesso
-            e a visualização de relatórios, enquanto as diversas opções de comunicação garantem uma
-            integração perfeita com a sua infraestrutura.
-          </p>
-        </div>
-      </div>
-    </section>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+				<div class="section-header">
+					<h2>Veja o iDFace Max em ação</h2>
+					<p>
+						O iDFace Max oferece um controle de acesso robusto e inteligente.
+						Seu algoritmo avançado e câmeras de alta qualidade permitem a
+						identificação rápida e precisa de até 100.000 faces, com detecção de
+						rostos vivos e capacidade de identificar usuários com ou sem
+						máscara. O amplo display touchscreen de 7'' facilita a configuração
+						de regras de acesso e a visualização de relatórios, enquanto as
+						diversas opções de comunicação garantem uma integração perfeita com
+						a sua infraestrutura.
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Detalhes Técnicos -->
-    <section class="tech-details">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Detalhes Técnicos</h2>
-        </div>
-        <div class="tech-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Especificações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Controle de Acesso</strong></td>
-                <td>
-                  Controle de Pessoas, Regras de Acesso (horários e departamentos), Controle de
-                  Portas (módulo de acionamento externo e/ou relé interno), Sensores e Botoeira
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Usuários</strong></td>
-                <td>Capacidade para mais de 200.000 usuários cadastrados</td>
-              </tr>
-              <tr>
-                <td><strong>Faces</strong></td>
-                <td>
-                  Capacidade para até 10.000 / 50.000 / 100.000 faces com detecção de rosto vivo
-                  (conforme licença)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Dimensões</strong></td>
-                <td>
-                  Terminal: 119,4 mm x 34,6 mm x 247 mm (L x P x A); Módulo de Acionamento Externo:
-                  52 mm x 52 mm x 22 mm (L x P x A)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Peso</strong></td>
-                <td>Terminal: 950g; Módulo de Acionamento Externo: 35g</td>
-              </tr>
-              <tr>
-                <td><strong>Relé de Saída</strong></td>
-                <td>1 relé interno e 1 no módulo de acionamento (até 30VAC/5A)</td>
-              </tr>
-              <tr>
-                <td><strong>Entrada/Saída Wiegand</strong></td>
-                <td>1 porta no módulo de acionamento</td>
-              </tr>
-              <tr>
-                <td><strong>Alimentação</strong></td>
-                <td>Fonte externa de 12V 2A ou PoE (IEEE802.3af)</td>
-              </tr>
-              <tr>
-                <td><strong>Grau de Proteção</strong></td>
-                <td>IP65</td>
-              </tr>
-              <tr>
-                <td><strong>Controle de Ponto</strong></td>
-                <td>
-                  Coletor compatível com o software RHiD (REP-P) conforme Portaria MTP 671/2021
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Comunicação</strong></td>
-                <td>
-                  Ethernet (1 porta 10/100Mbps), USB (1 porta Host 2.0), OSDP (RS-485), Wi-Fi
-                  (opcional), GPRS (opcional), Interfone SIP (versão Pro)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Identificação</strong></td>
-                <td>
-                  Reconhecimento Facial (Duas câmeras HD 1080p), Cartões de Proximidade (MIFARE ™,
-                  125 kHz ASK ou HID), Senha, QR Code
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Interface</strong></td>
-                <td>
-                  Tela LCD Touchscreen 7" (800x1280) capacitiva, Software Web Integrado, Áudio
-                  (Alto-falante e microfone embutidos)
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+		<!-- Seção Detalhes Técnicos -->
+		<section class="tech-details">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Detalhes Técnicos</h2>
+				</div>
+				<div class="tech-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Especificações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Controle de Acesso</strong></td>
+								<td>
+									Controle de Pessoas, Regras de Acesso (horários e
+									departamentos), Controle de Portas (módulo de acionamento
+									externo e/ou relé interno), Sensores e Botoeira
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Usuários</strong></td>
+								<td>Capacidade para mais de 200.000 usuários cadastrados</td>
+							</tr>
+							<tr>
+								<td><strong>Faces</strong></td>
+								<td>
+									Capacidade para até 10.000 / 50.000 / 100.000 faces com
+									detecção de rosto vivo (conforme licença)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Dimensões</strong></td>
+								<td>
+									Terminal: 119,4 mm x 34,6 mm x 247 mm (L x P x A); Módulo de
+									Acionamento Externo: 52 mm x 52 mm x 22 mm (L x P x A)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Peso</strong></td>
+								<td>Terminal: 950g; Módulo de Acionamento Externo: 35g</td>
+							</tr>
+							<tr>
+								<td><strong>Relé de Saída</strong></td>
+								<td>
+									1 relé interno e 1 no módulo de acionamento (até 30VAC/5A)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Entrada/Saída Wiegand</strong></td>
+								<td>1 porta no módulo de acionamento</td>
+							</tr>
+							<tr>
+								<td><strong>Alimentação</strong></td>
+								<td>Fonte externa de 12V 2A ou PoE (IEEE802.3af)</td>
+							</tr>
+							<tr>
+								<td><strong>Grau de Proteção</strong></td>
+								<td>IP65</td>
+							</tr>
+							<tr>
+								<td><strong>Controle de Ponto</strong></td>
+								<td>
+									Coletor compatível com o software RHiD (REP-P) conforme
+									Portaria MTP 671/2021
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Comunicação</strong></td>
+								<td>
+									Ethernet (1 porta 10/100Mbps), USB (1 porta Host 2.0), OSDP
+									(RS-485), Wi-Fi (opcional), GPRS (opcional), Interfone SIP
+									(versão Pro)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Identificação</strong></td>
+								<td>
+									Reconhecimento Facial (Duas câmeras HD 1080p), Cartões de
+									Proximidade (MIFARE ™, 125 kHz ASK ou HID), Senha, QR Code
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Interface</strong></td>
+								<td>
+									Tela LCD Touchscreen 7" (800x1280) capacitiva, Software Web
+									Integrado, Áudio (Alto-falante e microfone embutidos)
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção Downloads -->
-    <section class="downloads">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Download de materiais</h2>
-        </div>
-        <div class="downloads-links">
-          <div class="download-item">
-            <img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
-            <p>Baixar catálogo técnico (PDF)</p>
-            <a href="assets/pdfs/idface-max-datasheet.pdf">
-              <i class="fa-solid fa-download"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Seção Downloads -->
+		<section class="downloads">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Download de materiais</h2>
+				</div>
+				<div class="downloads-links">
+					<div class="download-item">
+						<img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
+						<p>Baixar catálogo técnico (PDF)</p>
+						<a href="assets/pdfs/idface-max-datasheet.pdf">
+							<i class="fa-solid fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Formulário e Footer -->
-    <div id="forms"></div>
-    <div id="footer"></div>
+		<!-- Formulário e Footer -->
+		<div id="forms"></div>
+		<div id="footer"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script type="module" src="assets/js/loadComponents.js"></script>
-    <script src="./assets/js/cards.js"></script>
-  </body>
+		<!-- Custom JS -->
+		<script type="module" src="assets/js/loadComponents.js"></script>
+		<script src="./assets/js/cards.js"></script>
+	</body>
 </html>

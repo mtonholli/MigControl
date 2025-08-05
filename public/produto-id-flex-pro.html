@@ -1,239 +1,271 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controlador de Acesso Multifuncional iDFlex Pro</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Controlador de Acesso Multifuncional iDFlex Pro</title>
+		<link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/produto.css" />
-    <link rel="stylesheet" href="assets/css/cards.css" />
-  </head>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS Files -->
+		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/produto.css" />
+		<link rel="stylesheet" href="assets/css/cards.css" />
+	</head>
 
-  <body>
-    <!-- Header será carregado dinamicamente aqui -->
-    <div id="header"></div>
+	<body>
+		<!-- Header será carregado dinamicamente aqui -->
+		<div id="header"></div>
 
-    <header class="hero">
-      <div class="container-fluid">
-        <div class="hero-content">
-          <h2>Controlador de Acesso Multifuncional iDFlex Pro</h2>
-          <h1>
-            Controle de acesso compacto, robusto e pronto para atender empresas de todos os portes.
-          </h1>
-          <p>
-            Com sua arquitetura inovadora e design moderno, o iDFlex Pro é um controlador de acesso
-            compacto, robusto e pronto para atender empresas de todos os portes. Sua utilização é
-            fácil e intuitiva, e o módulo de acionamento externo permite soluções expansíveis e com
-            maior segurança. O produto conta também com software web embarcado, não necessitando de
-            instalação de software adicional.
-          </p>
-          <button
-            id="toggleFormBtn"
-            data-bs-toggle="modal"
-            data-bs-target="#formModal"
-            class="button button-blue"
-          >
-            Fale com um especialista >
-          </button>
-        </div>
-        <div class="hero-image">
-          <img
-            src="assets/images/produtos/iDFlex-Pro-Frontal.png"
-            alt="Controlador de Acesso Multifuncional iDFlex Pro"
-          />
-        </div>
-      </div>
-    </header>
+		<header class="hero">
+			<div class="container-fluid">
+				<div class="hero-content">
+					<h2>Controlador de Acesso Multifuncional iDFlex Pro</h2>
+					<h1>
+						Controle de acesso compacto, robusto e pronto para atender empresas
+						de todos os portes.
+					</h1>
+					<p>
+						Com sua arquitetura inovadora e design moderno, o iDFlex Pro é um
+						controlador de acesso compacto, robusto e pronto para atender
+						empresas de todos os portes. Sua utilização é fácil e intuitiva, e o
+						módulo de acionamento externo permite soluções expansíveis e com
+						maior segurança. O produto conta também com software web embarcado,
+						não necessitando de instalação de software adicional.
+					</p>
+					<button
+						id="toggleFormBtn"
+						data-bs-toggle="modal"
+						data-bs-target="#formModal"
+						class="button button-blue"
+					>
+						Fale com um especialista >
+					</button>
+				</div>
+				<div class="hero-image">
+					<img
+						src="assets/images/produtos/iDFlex-Pro-Frontal.png"
+						alt="Controlador de Acesso Multifuncional iDFlex Pro"
+					/>
+				</div>
+			</div>
+		</header>
 
-    <section class="features-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Por que escolher o iDFlex Pro?</h2>
-          <p>Simplicidade, segurança e o melhor custo-benefício para o seu controle de acesso.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-item">
-            <img src="assets/icons/smartphone.png" alt="Display Touchscreen" />
-            <h3>Display Touchscreen</h3>
-            <p>Interface intuitiva e moderna para fácil configuração e gerenciamento</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
-            <h3>Regras de Acesso Personalizadas</h3>
-            <p>
-              Defina regras de liberação conforme horários e departamentos, adaptando-se às suas
-              necessidades
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/conformidade.png" alt="Identificação Versátil" />
-            <h3>Identificação Versátil</h3>
-            <p>
-              Suporta biometria, cartão de proximidade e senha para diversas opções de autenticação
-            </p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/settings.png" alt="Módulo de Acionamento" />
-            <h3>Módulo de Acionamento Externo</h3>
-            <p>Garante soluções expansíveis e maior segurança para o controle de portas</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/benefit.png" alt="Custo-Benefício" />
-            <h3>Melhor Custo-Benefício</h3>
-            <p>Uma solução completa e eficiente com excelente retorno sobre o investimento</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/icon-software-acessos.png" alt="Operação Stand Alone" />
-            <h3>Operação Stand Alone</h3>
-            <p>Software web embarcado que dispensa a instalação de software adicional</p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="features-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Por que escolher o iDFlex Pro?</h2>
+					<p>
+						Simplicidade, segurança e o melhor custo-benefício para o seu
+						controle de acesso.
+					</p>
+				</div>
+				<div class="features-grid">
+					<div class="feature-item">
+						<img src="assets/icons/smartphone.png" alt="Display Touchscreen" />
+						<h3>Display Touchscreen</h3>
+						<p>
+							Interface intuitiva e moderna para fácil configuração e
+							gerenciamento
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/evaluation.png" alt="Regras de Acesso" />
+						<h3>Regras de Acesso Personalizadas</h3>
+						<p>
+							Defina regras de liberação conforme horários e departamentos,
+							adaptando-se às suas necessidades
+						</p>
+					</div>
+					<div class="feature-item">
+						<img
+							src="assets/icons/conformidade.png"
+							alt="Identificação Versátil"
+						/>
+						<h3>Identificação Versátil</h3>
+						<p>
+							Suporta biometria, cartão de proximidade e senha para diversas
+							opções de autenticação
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/settings.png" alt="Módulo de Acionamento" />
+						<h3>Módulo de Acionamento Externo</h3>
+						<p>
+							Garante soluções expansíveis e maior segurança para o controle de
+							portas
+						</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/benefit.png" alt="Custo-Benefício" />
+						<h3>Melhor Custo-Benefício</h3>
+						<p>
+							Uma solução completa e eficiente com excelente retorno sobre o
+							investimento
+						</p>
+					</div>
+					<div class="feature-item">
+						<img
+							src="assets/icons/icon-software-acessos.png"
+							alt="Operação Stand Alone"
+						/>
+						<h3>Operação Stand Alone</h3>
+						<p>
+							Software web embarcado que dispensa a instalação de software
+							adicional
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="video-section">
-      <div class="container-fluid">
-        <div class="video-container">
-          <video
-            controls
-            poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
-          >
-            <source src="./assets/videos/video-iDFlex-Pro.mp4" type="video/mp4" />
+		<section class="video-section">
+			<div class="container-fluid">
+				<div class="video-container">
+					<video controls poster="./assets/images/banners/review-iDFlexPro.png">
+						<source
+							src="./assets/videos/video-iDFlex-Pro.mp4"
+							type="video/mp4"
+						/>
 
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-        <div class="section-header">
-          <h2>Veja o iDFlex Pro em ação</h2>
-          <p>
-            O iDFlex Pro simplifica o controle de acesso com sua interface intuitiva e
-            funcionalidades robustas. Gerencie até 200.000 usuários e 6.000 digitais, defina regras
-            de acesso por horários e departamentos, e monitore mais de 200.000 registros. A
-            comunicação é flexível, com Ethernet, USB, RS-485, e módulos opcionais de GPRS e Wi-Fi.
-            O software web integrado permite o gerenciamento completo via navegador, tornando a
-            operação ágil e eficiente.
-          </p>
-        </div>
-      </div>
-    </section>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+				<div class="section-header">
+					<h2>Veja o iDFlex Pro em ação</h2>
+					<p>
+						O iDFlex Pro simplifica o controle de acesso com sua interface
+						intuitiva e funcionalidades robustas. Gerencie até 200.000 usuários
+						e 6.000 digitais, defina regras de acesso por horários e
+						departamentos, e monitore mais de 200.000 registros. A comunicação é
+						flexível, com Ethernet, USB, RS-485, e módulos opcionais de GPRS e
+						Wi-Fi. O software web integrado permite o gerenciamento completo via
+						navegador, tornando a operação ágil e eficiente.
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <section class="tech-details">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Detalhes Técnicos</h2>
-        </div>
-        <div class="tech-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Especificações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Controle de Acesso</strong></td>
-                <td>
-                  Quantidade de Usuários (200.000+), Quantidade de Digitais (6.000), Regras de
-                  Acesso (horários e departamentos), Registros de Acesso (200.000+), iDCloud
-                  (opcional), Controle de Portas (1 porta), Sensores e Botoeiras (1 entrada de
-                  botoeira, 1 entrada para sensor de abertura), Relés de saída (1 relé interno ao
-                  módulo de acionamento de até 220VAC/5A), Entrada/Saída Wiegand (1 porta nativa)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Comunicação</strong></td>
-                <td>
-                  Ethernet (1 porta 10/100Mbps), USB (1 porta Host 2.0), RS-485 (1 porta), GPRS
-                  (opcional), Wi-Fi (opcional)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Identificação</strong></td>
-                <td>
-                  Leitor Biométrico (óptico de 500 DPI), Cartões de Proximidade (MIFARE™ ou 125kHz
-                  ASK), Senha
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Interface</strong></td>
-                <td>Tela LCD Touchscreen (2.4" (320x240) resistiva), Software Web Integrado</td>
-              </tr>
-              <tr>
-                <td><strong>Dimensões</strong></td>
-                <td>
-                  Terminal: 100 mm x 95 mm x 36 mm (L x A x P); Módulo de Acionamento: 52 mm x 52 mm
-                  x 22 mm (L x P x A)
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Peso</strong></td>
-                <td>Terminal: 212g; Módulo de Acionamento: 4g; Peso Embalado: 263g</td>
-              </tr>
-              <tr>
-                <td><strong>Alimentação</strong></td>
-                <td>Fonte externa de 12V</td>
-              </tr>
-              <tr>
-                <td><strong>Consumo Total</strong></td>
-                <td>2,4W (200mA) nominal</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+		<section class="tech-details">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Detalhes Técnicos</h2>
+				</div>
+				<div class="tech-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Especificações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Controle de Acesso</strong></td>
+								<td>
+									Quantidade de Usuários (200.000+), Quantidade de Digitais
+									(6.000), Regras de Acesso (horários e departamentos),
+									Registros de Acesso (200.000+), iDCloud (opcional), Controle
+									de Portas (1 porta), Sensores e Botoeiras (1 entrada de
+									botoeira, 1 entrada para sensor de abertura), Relés de saída
+									(1 relé interno ao módulo de acionamento de até 220VAC/5A),
+									Entrada/Saída Wiegand (1 porta nativa)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Comunicação</strong></td>
+								<td>
+									Ethernet (1 porta 10/100Mbps), USB (1 porta Host 2.0), RS-485
+									(1 porta), GPRS (opcional), Wi-Fi (opcional)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Identificação</strong></td>
+								<td>
+									Leitor Biométrico (óptico de 500 DPI), Cartões de Proximidade
+									(MIFARE™ ou 125kHz ASK), Senha
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Interface</strong></td>
+								<td>
+									Tela LCD Touchscreen (2.4" (320x240) resistiva), Software Web
+									Integrado
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Dimensões</strong></td>
+								<td>
+									Terminal: 100 mm x 95 mm x 36 mm (L x A x P); Módulo de
+									Acionamento: 52 mm x 52 mm x 22 mm (L x P x A)
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Peso</strong></td>
+								<td>
+									Terminal: 212g; Módulo de Acionamento: 4g; Peso Embalado: 263g
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Alimentação</strong></td>
+								<td>Fonte externa de 12V</td>
+							</tr>
+							<tr>
+								<td><strong>Consumo Total</strong></td>
+								<td>2,4W (200mA) nominal</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <section class="downloads">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Download de materiais</h2>
-        </div>
-        <div class="downloads-links">
-          <div class="download-item">
-            <img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
-            <p>Baixar catálogo técnico (PDF)</p>
-            <a href="assets/pdfs/idflexpro-datasheet.pdf">
-              <i class="fa-solid fa-download"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="downloads">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Download de materiais</h2>
+				</div>
+				<div class="downloads-links">
+					<div class="download-item">
+						<img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
+						<p>Baixar catálogo técnico (PDF)</p>
+						<a href="assets/pdfs/idflexpro-datasheet.pdf">
+							<i class="fa-solid fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Formulário e Footer -->
-    <div id="forms"></div>
-    <div id="footer"></div>
+		<!-- Formulário e Footer -->
+		<div id="forms"></div>
+		<div id="footer"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script type="module" src="assets/js/loadComponents.js"></script>
-    <script src="./assets/js/cards.js"></script>
-  </body>
+		<!-- Custom JS -->
+		<script type="module" src="assets/js/loadComponents.js"></script>
+		<script src="./assets/js/cards.js"></script>
+	</body>
 </html>

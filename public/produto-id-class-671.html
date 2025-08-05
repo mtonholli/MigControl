@@ -1,309 +1,335 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relógio de Ponto Eletrônico 671</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Relógio de Ponto Eletrônico 671</title>
+		<link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/produto.css" />
-    <link rel="stylesheet" href="assets/css/cards.css" />
-  </head>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS Files -->
+		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/produto.css" />
+		<link rel="stylesheet" href="assets/css/cards.css" />
+	</head>
 
-  <body>
-    <!-- Header será carregado dinamicamente aqui -->
-    <div id="header"></div>
+	<body>
+		<!-- Header será carregado dinamicamente aqui -->
+		<div id="header"></div>
 
-    <header class="hero">
-      <div class="container-fluid">
-        <div class="hero-content">
-          <h2>Relógio de Ponto Eletrônico 671</h2>
-          <h1>Controle de ponto.<br />Reinventado.</h1>
-          <p>
-            Design moderno, touchscreen intuitivo e múltiplas formas de<br />identificação. O REP
-            que está pronto para o futuro, hoje.
-          </p>
-          <div class="hero-buttons">
-            <button
-              id="toggleFormBtn"
-              data-bs-toggle="modal"
-              data-bs-target="#formModal"
-              class="button button-blue"
-            >
-              Fale com um especialista >
-            </button>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="./assets/images/produtos/iDClass-671.png" alt="Relógio de ponto 671" />
-        </div>
-      </div>
-    </header>
+		<header class="hero">
+			<div class="container-fluid">
+				<div class="hero-content">
+					<h2>Relógio de Ponto Eletrônico 671</h2>
+					<h1>Controle de ponto.<br />Reinventado.</h1>
+					<p>
+						Design moderno, touchscreen intuitivo e múltiplas formas de<br />identificação.
+						O REP que está pronto para o futuro, hoje.
+					</p>
+					<div class="hero-buttons">
+						<button
+							id="toggleFormBtn"
+							data-bs-toggle="modal"
+							data-bs-target="#formModal"
+							class="button button-blue"
+						>
+							Fale com um especialista >
+						</button>
+					</div>
+				</div>
+				<div class="hero-image">
+					<img
+						src="./assets/images/produtos/iDClass-671.png"
+						alt="Relógio de ponto 671"
+					/>
+				</div>
+			</div>
+		</header>
 
-    <section class="features-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Por que escolher o iDClass 671?</h2>
-          <p>Feito para simplificar. Construído para durar.</p>
-        </div>
-        <div class="features-grid features-grid-secondary">
-          <div class="feature-item">
-            <img src="assets/icons/touchscreen.png" alt="Touchscreen" />
-            <h3>Touchscreen colorido</h3>
-            <p>Interface intuitiva e moderna</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/biometria.png" alt="Biometria" />
-            <h3>Biometria + Cartão + Senha</h3>
-            <p>Identificação do jeito que você precisa</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/conformidade.png" alt="Conformidade" />
-            <h3>Conformidade total</h3>
-            <p>Atende à Portaria 671/2021</p>
-          </div>
-          <div class="feature-item">
-            <img src="assets/icons/design.png" alt="Design compacto" />
-            <h3>Design compacto e robusto</h3>
-            <p>Ideal para qualquer ambiente corporativo</p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="features-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Por que escolher o iDClass 671?</h2>
+					<p>Feito para simplificar. Construído para durar.</p>
+				</div>
+				<div class="features-grid features-grid-secondary">
+					<div class="feature-item">
+						<img src="assets/icons/touchscreen.png" alt="Touchscreen" />
+						<h3>Touchscreen colorido</h3>
+						<p>Interface intuitiva e moderna</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/biometria.png" alt="Biometria" />
+						<h3>Biometria + Cartão + Senha</h3>
+						<p>Identificação do jeito que você precisa</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/conformidade.png" alt="Conformidade" />
+						<h3>Conformidade total</h3>
+						<p>Atende à Portaria 671/2021</p>
+					</div>
+					<div class="feature-item">
+						<img src="assets/icons/design.png" alt="Design compacto" />
+						<h3>Design compacto e robusto</h3>
+						<p>Ideal para qualquer ambiente corporativo</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="video-section">
-      <div class="container-fluid">
-        <div class="video-container">
-          <video
-            controls
-            poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
-          >
-            <source src="./assets/videos/video-iDClass-671-apresentacao.mp4" type="video/mp4" />
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-        <div class="section-header">
-          <h2>Como funciona na prática?</h2>
-          <p>
-            Entenda na prática como o Relógio de Ponto Eletrônico 671 simplifica a marcação de ponto
-            com leitura biométrica precisa, impressão rápida e interface intuitiva.
-          </p>
-          <button class="button">Escolha agora o melhor modelo ></button>
-        </div>
-      </div>
-    </section>
+		<section class="video-section">
+			<div class="container-fluid">
+				<div class="video-container">
+					<video
+						controls
+						poster="./assets/images/banners/review-iDClass671.png"
+					>
+						<source
+							src="./assets/videos/video-iDClass-671-apresentacao.mp4"
+							type="video/mp4"
+						/>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+				<div class="section-header">
+					<h2>Como funciona na prática?</h2>
+					<p>
+						Entenda na prática como o Relógio de Ponto Eletrônico 671 simplifica
+						a marcação de ponto com leitura biométrica precisa, impressão rápida
+						e interface intuitiva.
+					</p>
+					<button
+						id="toggleFormBtn"
+						data-bs-toggle="modal"
+						data-bs-target="#formModal"
+						class="button"
+					>
+						Escolha agora o melhor modelo >
+					</button>
+				</div>
+			</div>
+		</section>
 
-    <section class="box-content">
-      <div class="container-fluid">
-        <div class="box-content-text">
-          <div class="section-header">
-            <h2>O que vem na caixa</h2>
-          </div>
-          <div class="box-features">
-            <div class="box-feature-item">
-              <img src="assets/icons/fonte_alimentacao.png" alt="Fonte de alimentação" />
-              <div class="box-feature-text">
-                <h4>Fonte de alimentação</h4>
-                <p>Alimentação confiável e estável</p>
-              </div>
-            </div>
-            <div class="box-feature-item">
-              <img src="assets/icons/suporte_fixacao.png" alt="Suportes de fixação" />
-              <div class="box-feature-text">
-                <h4>Suportes de fixação</h4>
-                <p>Para instalação em parede</p>
-              </div>
-            </div>
-            <div class="box-feature-item">
-              <img src="assets/icons/manual_usuario.png" alt="Manual e guia rápido" />
-              <div class="box-feature-text">
-                <h4>Manual e guia rápido</h4>
-                <p>Documentação completa</p>
-              </div>
-            </div>
-            <div class="box-feature-item">
-              <img src="assets/icons/certificado.png" alt="Certificados" />
-              <div class="box-feature-text">
-                <h4>Certificados</h4>
-                <p>Documentação de conformidade</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box-content-image">
-          <video
-            controls
-            poster="https://www.controlid.com.br/blog/wp-content/uploads/2020/05/fb.png"
-          >
-            <source src="./assets/videos/video-iDClass-671-unboxing.mp4" type="video/mp4" />
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-      </div>
-    </section>
+		<section class="box-content">
+			<div class="container-fluid">
+				<div class="box-content-text">
+					<div class="section-header">
+						<h2>O que vem na caixa</h2>
+					</div>
+					<div class="box-features">
+						<div class="box-feature-item">
+							<img
+								src="assets/icons/fonte_alimentacao.png"
+								alt="Fonte de alimentação"
+							/>
+							<div class="box-feature-text">
+								<h4>Fonte de alimentação</h4>
+								<p>Alimentação confiável e estável</p>
+							</div>
+						</div>
+						<div class="box-feature-item">
+							<img
+								src="assets/icons/suporte_fixacao.png"
+								alt="Suportes de fixação"
+							/>
+							<div class="box-feature-text">
+								<h4>Suportes de fixação</h4>
+								<p>Para instalação em parede</p>
+							</div>
+						</div>
+						<div class="box-feature-item">
+							<img
+								src="assets/icons/manual_usuario.png"
+								alt="Manual e guia rápido"
+							/>
+							<div class="box-feature-text">
+								<h4>Manual e guia rápido</h4>
+								<p>Documentação completa</p>
+							</div>
+						</div>
+						<div class="box-feature-item">
+							<img src="assets/icons/certificado.png" alt="Certificados" />
+							<div class="box-feature-text">
+								<h4>Certificados</h4>
+								<p>Documentação de conformidade</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-content-image">
+					<video
+						controls
+						poster="./assets/images/banners/unboxing-iDClass671.png"
+					>
+						<source
+							src="./assets/videos/video-iDClass-671-unboxing.mp4"
+							type="video/mp4"
+						/>
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</div>
+			</div>
+		</section>
 
-    <section class="models-table-section">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Tabela de Modelos</h2>
-        </div>
-        <div class="tech-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Modelo</th>
-                <th>Biometria</th>
-                <th>Cartão RFID</th>
-                <th>Cartão de Barras</th>
-                <th>Senha</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Mult</strong></td>
-                <td class="check-cell">✓</td>
-                <td class="check-cell">✓</td>
-                <td class="check-cell">✓</td>
-                <td class="check-cell">✓</td>
-              </tr>
-              <tr>
-                <td><strong>Bio Prox</strong></td>
-                <td class="check-cell">✓</td>
-                <td class="check-cell">✓</td>
-                <td class="empty-cell">-</td>
-                <td class="check-cell">✓</td>
-              </tr>
-              <tr>
-                <td><strong>Bio Barras</strong></td>
-                <td class="check-cell">✓</td>
-                <td class="empty-cell">-</td>
-                <td class="check-cell">✓</td>
-                <td class="check-cell">✓</td>
-              </tr>
-              <tr>
-                <td><strong>Bio</strong></td>
-                <td class="check-cell">✓</td>
-                <td class="empty-cell">-</td>
-                <td class="empty-cell">-</td>
-                <td class="check-cell">✓</td>
-              </tr>
-              <tr>
-                <td><strong>Prox</strong></td>
-                <td class="empty-cell">-</td>
-                <td class="check-cell">✓</td>
-                <td class="empty-cell">-</td>
-                <td class="check-cell">✓</td>
-              </tr>
-              <tr>
-                <td><strong>Barras</strong></td>
-                <td class="empty-cell">-</td>
-                <td class="empty-cell">-</td>
-                <td class="check-cell">✓</td>
-                <td class="check-cell">✓</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+		<section class="models-table-section">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Tabela de Modelos</h2>
+				</div>
+				<div class="tech-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Modelo</th>
+								<th>Biometria</th>
+								<th>Cartão RFID</th>
+								<th>Cartão de Barras</th>
+								<th>Senha</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Mult</strong></td>
+								<td class="check-cell">✓</td>
+								<td class="check-cell">✓</td>
+								<td class="check-cell">✓</td>
+								<td class="check-cell">✓</td>
+							</tr>
+							<tr>
+								<td><strong>Bio Prox</strong></td>
+								<td class="check-cell">✓</td>
+								<td class="check-cell">✓</td>
+								<td class="empty-cell">-</td>
+								<td class="check-cell">✓</td>
+							</tr>
+							<tr>
+								<td><strong>Bio Barras</strong></td>
+								<td class="check-cell">✓</td>
+								<td class="empty-cell">-</td>
+								<td class="check-cell">✓</td>
+								<td class="check-cell">✓</td>
+							</tr>
+							<tr>
+								<td><strong>Bio</strong></td>
+								<td class="check-cell">✓</td>
+								<td class="empty-cell">-</td>
+								<td class="empty-cell">-</td>
+								<td class="check-cell">✓</td>
+							</tr>
+							<tr>
+								<td><strong>Prox</strong></td>
+								<td class="empty-cell">-</td>
+								<td class="check-cell">✓</td>
+								<td class="empty-cell">-</td>
+								<td class="check-cell">✓</td>
+							</tr>
+							<tr>
+								<td><strong>Barras</strong></td>
+								<td class="empty-cell">-</td>
+								<td class="empty-cell">-</td>
+								<td class="check-cell">✓</td>
+								<td class="check-cell">✓</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <section class="tech-details">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Detalhes Técnicos</h2>
-        </div>
-        <div class="tech-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Especificações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Tela</strong></td>
-                <td>Touchscreen colorido</td>
-              </tr>
-              <tr>
-                <td><strong>Identificação</strong></td>
-                <td>Biometria, cartão RFID, senha, código de barras</td>
-              </tr>
-              <tr>
-                <td><strong>Comunicação</strong></td>
-                <td>USB, Ethernet, Wi-Fi (opcional)</td>
-              </tr>
-              <tr>
-                <td><strong>Portarias</strong></td>
-                <td>671/2021 e 4/2022</td>
-              </tr>
-              <tr>
-                <td><strong>Certificação</strong></td>
-                <td>INMETRO</td>
-              </tr>
-              <tr>
-                <td><strong>Instalação</strong></td>
-                <td>Fixação em parede, bivolt automático</td>
-              </tr>
-              <tr>
-                <td><strong>Compatibilidade</strong></td>
-                <td>Softwares de controle de ponto líderes do mercado</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+		<section class="tech-details">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Detalhes Técnicos</h2>
+				</div>
+				<div class="tech-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Especificações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Tela</strong></td>
+								<td>Touchscreen colorido</td>
+							</tr>
+							<tr>
+								<td><strong>Identificação</strong></td>
+								<td>Biometria, cartão RFID, senha, código de barras</td>
+							</tr>
+							<tr>
+								<td><strong>Comunicação</strong></td>
+								<td>USB, Ethernet, Wi-Fi (opcional)</td>
+							</tr>
+							<tr>
+								<td><strong>Portarias</strong></td>
+								<td>671/2021 e 4/2022</td>
+							</tr>
+							<tr>
+								<td><strong>Certificação</strong></td>
+								<td>INMETRO</td>
+							</tr>
+							<tr>
+								<td><strong>Instalação</strong></td>
+								<td>Fixação em parede, bivolt automático</td>
+							</tr>
+							<tr>
+								<td><strong>Compatibilidade</strong></td>
+								<td>Softwares de controle de ponto líderes do mercado</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <section class="downloads">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h2>Download de materiais</h2>
-        </div>
-        <div class="downloads-links">
-          <div class="download-item">
-            <img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
-            <p>Baixar catálogo técnico (PDF)</p>
-            <a href="../assets/pdfs/relogio-ponto-671.pdf">
-              <i class="fa-solid fa-download"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="downloads">
+			<div class="container-fluid">
+				<div class="section-header">
+					<h2>Download de materiais</h2>
+				</div>
+				<div class="downloads-links">
+					<div class="download-item">
+						<img src="./assets/icons/pdfIcon.png" alt="ícone PDF" />
+						<p>Baixar catálogo técnico (PDF)</p>
+						<a href="../assets/pdfs/relogio-ponto-671.pdf">
+							<i class="fa-solid fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Formulário e Footer -->
-    <div id="forms"></div>
-    <div id="footer"></div>
+		<!-- Formulário e Footer -->
+		<div id="forms"></div>
+		<div id="footer"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script type="module" src="assets/js/loadComponents.js"></script>
-    <script src="./assets/js/cards.js"></script>
-  </body>
+		<!-- Custom JS -->
+		<script type="module" src="assets/js/loadComponents.js"></script>
+		<script src="./assets/js/cards.js"></script>
+	</body>
 </html>
