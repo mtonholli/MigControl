@@ -1,12 +1,78 @@
 require('dotenv').config();
+
+const session = require('express-session');
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: true }
+}))
+
+const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+})
+
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const [rows] = await db.execute('SELECT id, password_hash FROM users WHERE username = ?', [username])
+
+    if (rows.length === 0) {
+      return res.status(401).json({ success: false, message: 'Usuário não encontrado' });
+    }
+
+    const user = rows[0];
+    const match = await bcrypt.compare(password, user.password_hash)
+
+    if (match) {
+      req.session.userId = user.id;
+      res.json({ success: true, message: 'Login bem-sucedido' });
+    } else {
+      res.status(401).json({success: false, message: 'Senha incorreta'})
+    }
+  } catch (err) {
+    console.error('Erro no login:', err)
+    res.status(500).json({ success: false, message: 'Erro interno no servidor'})
+  }  
+})
+
+function autenticar(req, res, next) {
+  if (req.session.userId) {
+    next();
+  } else {
+    res.status(401).json({success: false, message: 'Acesso não autorizado'});
+  }
+}
+
+app.get('/admin/posts', autenticar, async (req, res) => {
+  const [posts] = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
+  res.json(posts);
+})
+
+app.post('/admin/posts', autenticar, async (req, res) => {
+  const { title, content } = req.body;
+  await db.execute('INSERT INTO posts (title, content, author_id) VALUES (?, ?, ?)', [title, content, req.session.userId]);
+  res.json({ success: true, message: 'Post criado com sucesso' });
+});
+
+app.post('/logout', (req, res) => {
+  req.session.destroy()
+  res.json({ success: true, message: 'Logout realizado com sucesso' });
+})
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-
 const app = express();
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
