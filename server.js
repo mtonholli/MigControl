@@ -5,14 +5,13 @@ const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const path = require('path');
 const mysql = require('mysql2/promise');
 const bcrypt = require('bcrypt');
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
