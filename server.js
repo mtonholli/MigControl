@@ -44,34 +44,40 @@ app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-  console.log('Login tentando usuário:', username);
-  
-  const [rows] = await db.query('SELECT id, password_hash FROM users WHERE username = ?', [username]);
-  console.log('Query resultado:', rows);
+    console.log('Login tentando usuário:', username);
 
-  if (rows.length === 0) {
-    return res.status(401).json({ success: false, message: 'Usuário não encontrado' });
+    const [rows] = await db.query(
+      'SELECT id, password_hash FROM users WHERE username = ?',
+      [username]
+    );
+    console.log('Query resultado:', rows);
+
+    if (rows.length === 0) {
+      return res.status(401).json({ success: false, message: 'Usuário não encontrado' });
+    }
+
+    const user = rows[0];
+    console.log('Hash da senha armazenada:', user.password_hash);
+
+    const match = await bcrypt.compare(password, user.password_hash);
+    console.log('Senha correta?', match);
+
+    if (match) {
+      console.log('Sessão antes de setar userId:', req.session);
+      req.session.userId = user.id;
+      console.log('Sessão após setar userId:', req.session);
+
+      res.redirect('/admin/dashboard.html');
+    } else {
+      res.status(401).json({ success: false, message: 'Senha incorreta' });
+    }
+
+  } catch (err) {
+    console.error('Erro no login:', err);
+    res.status(500).json({ success: false, message: 'Erro interno no servidor' });
   }
+});
 
-  const user = rows[0];
-  console.log('Hash da senha armazenada:', user.password_hash);
-
-  const match = await bcrypt.compare(password, user.password_hash);
-  console.log('Senha correta?', match);
-
-  if (match) {
-    console.log('Sessão antes de setar userId:', req.session);
-    req.session.userId = user.id;
-    console.log('Sessão após setar userId:', req.session);
-
-    res.redirect('/admin/dashboard.html');
-  } else {
-    res.status(401).json({ success: false, message: 'Senha incorreta' });
-  }
-} catch (err) {
-  console.error('Erro no login:', err);
-  res.status(500).json({ success: false, message: 'Erro interno no servidor' });
-})
 
 app.post('/logout', (req, res) => {
   req.session.destroy()
