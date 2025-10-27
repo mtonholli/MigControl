@@ -44,25 +44,33 @@ app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const [rows] = await db.query('SELECT id, password_hash FROM users WHERE username = ?', [username])
+  console.log('Login tentando usuário:', username);
+  
+  const [rows] = await db.query('SELECT id, password_hash FROM users WHERE username = ?', [username]);
+  console.log('Query resultado:', rows);
 
-    if (rows.length === 0) {
-      return res.status(401).json({ success: false, message: 'Usuário não encontrado' });
-    }
+  if (rows.length === 0) {
+    return res.status(401).json({ success: false, message: 'Usuário não encontrado' });
+  }
 
-    const user = rows[0];
-    const match = await bcrypt.compare(password, user.password_hash)
+  const user = rows[0];
+  console.log('Hash da senha armazenada:', user.password_hash);
 
-    if (match) {
-      req.session.userId = user.id;
-      res.redirect('/admin/dashboard.html');
-    } else {
-      res.status(401).json({success: false, message: 'Senha incorreta'})
-    }
-  } catch (err) {
-    console.error('Erro no login:', err)
-    res.status(500).json({ success: false, message: 'Erro interno no servidor'})
-  }  
+  const match = await bcrypt.compare(password, user.password_hash);
+  console.log('Senha correta?', match);
+
+  if (match) {
+    console.log('Sessão antes de setar userId:', req.session);
+    req.session.userId = user.id;
+    console.log('Sessão após setar userId:', req.session);
+
+    res.redirect('/admin/dashboard.html');
+  } else {
+    res.status(401).json({ success: false, message: 'Senha incorreta' });
+  }
+} catch (err) {
+  console.error('Erro no login:', err);
+  res.status(500).json({ success: false, message: 'Erro interno no servidor' });
 })
 
 app.post('/logout', (req, res) => {
