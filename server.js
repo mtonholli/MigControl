@@ -61,21 +61,23 @@ app.post('/login', async (req, res) => {
     const match = await bcrypt.compare(password, user.password_hash);
     console.log('Senha correta?', match);
 
-    if (match) {
-      console.log('Sessão antes de setar userId:', req.session);
-      req.session.userId = user.id;
-      console.log('Sessão após setar userId:', req.session);
-
-      res.redirect('/admin/dashboard.html');
-    } else {
-      res.status(401).json({ success: false, message: 'Senha incorreta' });
+    if (!match) {
+      return res.status(401).json({ success: false, message: 'Senha incorreta' });
     }
+
+    // Se chegou aqui, a senha está correta
+    console.log('Sessão antes de setar userId:', req.session);
+    req.session.userId = user.id;
+    console.log('Sessão após setar userId:', req.session);
+
+    return res.redirect('/admin/dashboard.html');
 
   } catch (err) {
     console.error('Erro no login:', err);
-    res.status(500).json({ success: false, message: 'Erro interno no servidor' });
+    return res.status(500).json({ success: false, message: 'Erro interno no servidor' });
   }
 });
+
 
 
 app.post('/logout', (req, res) => {
