@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,41 +19,15 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sansation:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
 
 		<!-- CSS Files -->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/blog.css" />
-
-		<!-- Google Tag Manager -->
-		<script>
-			(function (w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != "dataLayer" ? "&l=" + l : "";
-				j.async = true;
-				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, "script", "dataLayer", "GTM-P5RZTPVC");
-		</script>
-		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-P5RZTPVC"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-
 		<!-- Header -->
 		<div id="header"></div>
 
@@ -65,94 +39,8 @@
 		</div>
 
 		<div class="container-fluid">
-			<div class="produtos-grid">
-				<!-- Produto 1 -->
-				<a
-					href="produto-id-face-max.html"
-					class="produto-card"
-					style="--delay: 0s"
-				>
-					<div class="imagem-wrapper">
-						<img
-							src="./assets/images/blog/blog1.jpg"
-							alt="Terminal de Reconhecimento Facial Max"
-						/>
-						<span class="tags">
-							<span class="tag">Segurança</span>
-							<span class="tag">Inovação</span>
-							<span class="tag">Eficiência</span>
-						</span>
-					</div>
-					<div class="produto-texto">
-						<span class="data-publicacao">16 de Junho, 2025</span>
-						<h4>Reconhecimento Facial na Palma da Mão</h4>
-						<p class="descricao">
-							A tecnologia de reconhecimento facial está mais acessível do que
-							nunca. Descubra como o Terminal Max da Control iD transforma seu
-							celular em uma chave de acesso inteligente.
-						</p>
-						<span class="link-produto">Ler mais →</span>
-					</div>
-				</a>
-
-				<!-- Produto 2 -->
-				<a
-					href="produto-id-secure-cloud.html"
-					class="produto-card"
-					style="--delay: 0.2s"
-				>
-					<div class="imagem-wrapper">
-						<img
-							src="./assets/images/blog/blog2.jpg"
-							alt="Software de Controle de Acesso Cloud"
-						/>
-						<span class="tags">
-							<span class="tag">Segurança</span>
-							<span class="tag">Gerenciamento</span>
-							<span class="tag">Escalabilidade</span>
-						</span>
-					</div>
-					<div class="produto-texto">
-						<span class="data-publicacao">04 de Agosto, 2025</span>
-
-						<h4>Produtividade com Controle de Horário</h4>
-						<p class="descricao">
-							O software de controle de acesso cloud da Control iD permite
-							acompanhar horários e acessos em tempo real. Mais eficiência,
-							menos preocupações.
-						</p>
-						<span class="link-produto">Ler mais →</span>
-					</div>
-				</a>
-
-				<!-- Produto 3 -->
-				<a
-					href="produto-id-class-671.html"
-					class="produto-card"
-					style="--delay: 0.4s"
-				>
-					<div class="imagem-wrapper">
-						<img
-							src="./assets/images/blog/blog3.jpg"
-							alt="Relógio de Ponto Eletrônico 671"
-						/>
-						<span class="tags">
-							<span class="tag">Conformidade</span>
-							<span class="tag">Produtividade</span>
-							<span class="tag">Confiabilidade</span>
-						</span>
-					</div>
-					<div class="produto-texto">
-						<span class="data-publicacao">07 de Julho, 2025</span>
-						<h4>Ponto Eletrônico com Biometria</h4>
-						<p class="descricao">
-							O REP iDClass 671 garante conformidade com a Portaria 671 e
-							segurança total com biometria digital. Controle de ponto nunca foi
-							tão confiável.
-						</p>
-						<span class="link-produto">Ler mais →</span>
-					</div>
-				</a>
+			<div id="blog-posts" class="produtos-grid">
+				<!-- Os posts serão carregados dinamicamente aqui -->
 			</div>
 		</div>
 
@@ -162,7 +50,8 @@
 		<!-- Bootstrap JS -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-		<!-- Custom JS -->
+		<!-- Scripts personalizados -->
 		<script type="module" src="assets/js/loadComponents.js"></script>
+		<script src="assets/js/blogLoader.js"></script>
 	</body>
 </html>

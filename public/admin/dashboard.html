@@ -86,66 +86,113 @@
 		</div>
 
 		<!-- Modal de Post -->
-		<div class="modal fade" id="postModal" tabindex="-1">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modalTitle">
-							<i class="fas fa-edit me-2"></i>Novo Post
-						</h5>
-						<button
-							type="button"
-							class="btn-close btn-close-white"
-							data-bs-dismiss="modal"
-						></button>
-					</div>
-					<div class="modal-body">
-						<form id="postForm">
-							<input type="hidden" id="postId" />
+<!-- Modal de Post -->
+<div class="modal fade" id="postModal" tabindex="-1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">
+					<i class="fas fa-edit me-2"></i>Novo Post
+				</h5>
+				<button
+					type="button"
+					class="btn-close btn-close-white"
+					data-bs-dismiss="modal"
+				></button>
+			</div>
+			<div class="modal-body">
+				<form id="postForm" enctype="multipart/form-data">
+					<input type="hidden" id="postId" />
 
-							<div class="mb-3">
-								<label for="title" class="form-label">Título do Post</label>
-								<input
-									type="text"
-									class="form-control"
-									id="title"
-									name="title"
-									required
-								/>
-							</div>
+					<div class="mb-3">
+						<label for="title" class="form-label">Título do Post</label>
+						<input
+							type="text"
+							class="form-control"
+							id="title"
+							name="title"
+							required
+						/>
+					</div>
 
-							<div class="mb-3">
-								<label for="content" class="form-label">Conteúdo</label>
-								<textarea
-									class="form-control"
-									id="content"
-									name="content"
-									rows="10"
-									required
-									placeholder="Digite o conteúdo do post aqui..."
-								></textarea>
-							</div>
-						</form>
+					<div class="mb-3">
+						<label for="content" class="form-label">Conteúdo</label>
+						<textarea
+							class="form-control"
+							id="content"
+							name="content"
+							rows="8"
+							required
+							placeholder="Digite o conteúdo do post aqui..."
+						></textarea>
 					</div>
-					<div class="modal-footer">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							data-bs-dismiss="modal"
-						>
-							Cancelar
-						</button>
-						<button
-							type="button"
-							class="btn btn-primary"
-							onclick="salvarPost()"
-						>
-							<i class="fas fa-save me-2"></i>Salvar Post
-						</button>
+
+					<div class="mb-3">
+						<label for="image" class="form-label">Imagem de capa</label>
+						<input
+							type="file"
+							class="form-control"
+							id="image"
+							name="image"
+							accept="image/*"
+						/>
+						<small class="text-muted">Formatos aceitos: JPG, PNG, WEBP</small>
 					</div>
-				</div>
+
+					<div class="row">
+						<div class="col-md-4 mb-3">
+							<label for="tag1" class="form-label">Tag 1</label>
+							<input
+								type="text"
+								class="form-control"
+								id="tag1"
+								name="tag1"
+								placeholder="Ex: Segurança"
+							/>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label for="tag2" class="form-label">Tag 2</label>
+							<input
+								type="text"
+								class="form-control"
+								id="tag2"
+								name="tag2"
+								placeholder="Ex: Inovação"
+							/>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label for="tag3" class="form-label">Tag 3</label>
+							<input
+								type="text"
+								class="form-control"
+								id="tag3"
+								name="tag3"
+								placeholder="Ex: Eficiência"
+							/>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button
+					type="button"
+					class="btn btn-secondary"
+					data-bs-dismiss="modal"
+				>
+					Cancelar
+				</button>
+				<button
+					type="button"
+					class="btn btn-primary"
+					onclick="salvarPost()"
+				>
+					<i class="fas fa-save me-2"></i>Salvar Post
+				</button>
 			</div>
 		</div>
+	</div>
+</div>
+
 
 		<!-- Modal de Confirmação de Exclusão -->
 		<div class="modal fade" id="deleteModal" tabindex="-1">

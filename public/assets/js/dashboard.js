@@ -122,39 +122,31 @@ async function editarPost(id) {
 
 // Salvar post
 async function salvarPost() {
-	const title = document.getElementById("title").value;
-	const content = document.getElementById("content").value;
-	const postId = currentPostId;
+  const form = document.getElementById('postForm');
+  const formData = new FormData(form);
 
-	if (!title.trim() || !content.trim()) {
-		mostrarAlerta("Título e conteúdo são obrigatórios", "danger");
-		return;
-	}
+  const postId = document.getElementById('postId').value;
+  const method = postId ? 'PUT' : 'POST';
+  const url = postId ? `/admin/posts/${postId}` : '/admin/posts';
 
-	try {
-		const url = postId ? `/admin/posts/${postId}` : "/admin/posts";
-		const method = postId ? "PUT" : "POST";
+  try {
+    const response = await fetch(url, {
+      method,
+      body: formData,
+    });
 
-		const response = await fetch(url, {
-			method: method,
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ title, content }),
-		});
+    const result = await response.json();
 
-		const result = await response.json();
-
-		if (!response.ok) {
-			throw new Error(result.message || "Erro ao salvar post");
-		}
-
-		mostrarAlerta(result.message, "success");
-		bootstrap.Modal.getInstance(document.getElementById("postModal")).hide();
-		carregarPosts();
-	} catch (error) {
-		mostrarAlerta("Erro ao salvar post: " + error.message, "danger");
-	}
+    if (result.success) {
+      alert('✅ ' + result.message);
+      location.reload();
+    } else {
+      alert('⚠️ ' + result.message);
+    }
+  } catch (error) {
+    console.error('Erro ao salvar post:', error);
+    alert('Erro ao salvar post.');
+  }
 }
 
 // Função para confirmar exclusão

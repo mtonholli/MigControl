@@ -127,8 +127,25 @@ app.get('/admin/posts/:id', autenticar, async (req, res) => {
 });
 
 // Criar novo post (Admin)
-app.post('/admin/posts', autenticar, async (req, res) => {
-  const { title, content, image } = req.body;
+import multer from 'multer';
+
+// Configuração de upload com Multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, 'public/uploads'));
+  },
+  filename: function (req, file, cb) {
+    const uniqueName = Date.now() + '-' + file.originalname.replace(/\s+/g, '_');
+    cb(null, uniqueName);
+  }
+});
+
+const upload = multer({ storage });
+
+// Criar novo post (Admin)
+app.post('/admin/posts', autenticar, upload.single('image'), async (req, res) => {
+  const { title, content, tag1, tag2, tag3 } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : null;
 
   if (!title || !content) {
     return res.status(400).json({ success: false, message: 'Título e conteúdo são obrigatórios' });
@@ -136,20 +153,22 @@ app.post('/admin/posts', autenticar, async (req, res) => {
 
   try {
     const [result] = await db.execute(
-      'INSERT INTO posts (title, content, image, author_id, created_at, updated_at) VALUES (?, ?, ?, ?', 
-      [title, content, image, req.session.userId]
+      `INSERT INTO posts (title, content, image, tag1, tag2, tag3, author_id, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NOW())`,
+      [title, content, image, tag1 || null, tag2 || null, tag3 || null, req.session.userId]
     );
-    
-    res.json({ 
-      success: true, 
+
+    res.json({
+      success: true,
       message: 'Post criado com sucesso',
-      postId: result.insertId 
+      postId: result.insertId
     });
   } catch (error) {
     console.error('Erro ao criar post:', error);
     res.status(500).json({ success: false, message: 'Erro interno do servidor' });
   }
 });
+
 
 // Atualizar post existente (Admin)
 app.put('/admin/posts/:id', autenticar, async (req, res) => {
