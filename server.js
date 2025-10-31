@@ -33,7 +33,7 @@ function autenticar(req, res, next) {
   if (req.session.userId) {
     next();
   } else {
-    res.status(401).json({success: false, message: 'Acesso não autorizado'});
+    res.status(401).json({ success: false, message: 'Acesso não autorizado' });
   }
 }
 
@@ -128,7 +128,7 @@ app.get('/admin/posts', autenticar, async (req, res) => {
 // Buscar post específico por ID (Admin)
 app.get('/admin/posts/:id', autenticar, async (req, res) => {
   const { id } = req.params;
-  
+
   try {
     const [posts] = await db.execute(`
       SELECT p.*, u.username as author_name 
@@ -236,7 +236,7 @@ app.delete('/admin/posts/:id', autenticar, async (req, res) => {
   try {
     // Verificar se o post existe
     const [existingPost] = await db.execute('SELECT id FROM posts WHERE id = ?', [id]);
-    
+
     if (existingPost.length === 0) {
       return res.status(404).json({ success: false, message: 'Post não encontrado' });
     }
@@ -282,13 +282,16 @@ app.get('/api/posts', async (req, res) => {
 // Buscar post público específico por ID
 app.get('/api/posts/:id', async (req, res) => {
   const { id } = req.params;
-  
+
   try {
     const [posts] = await db.execute(`
-      SELECT p.id, p.title, p.content, p.created_at, p.updated_at, u.username as author_name
-      FROM posts p 
-      LEFT JOIN users u ON p.author_id = u.id 
-      WHERE p.id = ?
+      SELECT 
+  p.id, p.title, p.content, p.image, 
+  p.created_at, p.updated_at,
+  u.username AS author_name
+FROM posts p 
+LEFT JOIN users u ON p.author_id = u.id 
+WHERE p.id = ?
     `, [id]);
 
     if (posts.length === 0) {

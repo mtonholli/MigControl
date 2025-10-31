@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 				const imagem =
 					post.image && post.image.trim() !== ""
 						? post.image
-						: "./assets/images/blog/default.jpg";
+						: ".\assets\images\LogoMigControlAzul.png";
 
 				// Gera um link para a página do post completo (exemplo)
 				const link = `/post.html?id=${post.id}`;

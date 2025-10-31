@@ -1,0 +1,65 @@
+/* ==========================
+   ESTILO DA PÁGINA DE POST
+   ========================== */
+
+.post-banner {
+	position: relative;
+	width: 100%;
+	height: 45vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0d1b2a;
+}
+
+.post-banner img.post-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: brightness(60%);
+}
+
+.banner-overlay {
+	position: absolute;
+	text-align: center;
+	color: #fff;
+	padding: 2rem;
+}
+
+.banner-overlay h1 {
+	font-family: "Sansation", sans-serif;
+	font-weight: 700;
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.banner-overlay span {
+	font-size: 1rem;
+	opacity: 0.85;
+}
+
+.post-content {
+	max-width: 900px;
+	margin: 4rem auto;
+	padding: 0 1rem 4rem;
+}
+
+.post-content .conteudo {
+	font-family: "Inter", sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.8;
+	color: #333;
+}
+
+.post-content img {
+	max-width: 100%;
+	border-radius: 10px;
+	margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+	.banner-overlay h1 {
+		font-size: 1.8rem;
+	}
+}
