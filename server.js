@@ -91,12 +91,34 @@ app.post('/logout', (req, res) => {
 app.get('/admin/posts', autenticar, async (req, res) => {
   try {
     const [posts] = await db.execute(`
-      SELECT p.*, u.username as author_name 
-      FROM posts p 
-      LEFT JOIN users u ON p.author_id = u.id 
+      SELECT 
+        p.id,
+        p.title,
+        p.content,
+        p.image,
+        p.tag1,
+        p.tag2,
+        p.tag3,
+        p.created_at,
+        u.username AS author_name
+      FROM posts p
+      LEFT JOIN users u ON p.author_id = u.id
       ORDER BY p.created_at DESC
     `);
-    res.json(posts);
+
+    // Mapear as tags e montar URL da imagem
+    const formattedPosts = posts.map(post => ({
+      id: post.id,
+      title: post.title,
+      content: post.content,
+      author_name: post.author_name,
+      created_at: post.created_at,
+      image_url: post.image ? `/uploads/${post.image}` : null,
+      tags: [post.tag1, post.tag2, post.tag3].filter(tag => tag) // remove valores nulos
+    }));
+
+    res.json(formattedPosts);
+
   } catch (error) {
     console.error('Erro ao buscar posts:', error);
     res.status(500).json({ success: false, message: 'Erro interno do servidor' });
@@ -127,7 +149,7 @@ app.get('/admin/posts/:id', autenticar, async (req, res) => {
 });
 
 // Criar novo post (Admin)
-import multer from 'multer';
+const multer = require('multer');
 
 // Configuração de upload com Multer
 const storage = multer.diskStorage({
@@ -171,9 +193,11 @@ app.post('/admin/posts', autenticar, upload.single('image'), async (req, res) =>
 
 
 // Atualizar post existente (Admin)
-app.put('/admin/posts/:id', autenticar, async (req, res) => {
+// Atualizar post existente (Admin)
+app.put('/admin/posts/:id', autenticar, upload.single('image'), async (req, res) => {
   const { id } = req.params;
-  const { title, content } = req.body;
+  const { title, content, tag1, tag2, tag3 } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : null;
 
   if (!title || !content) {
     return res.status(400).json({ success: false, message: 'Título e conteúdo são obrigatórios' });
@@ -181,16 +205,20 @@ app.put('/admin/posts/:id', autenticar, async (req, res) => {
 
   try {
     // Verificar se o post existe
-    const [existingPost] = await db.execute('SELECT id FROM posts WHERE id = ?', [id]);
-    
+    const [existingPost] = await db.execute('SELECT id, image FROM posts WHERE id = ?', [id]);
     if (existingPost.length === 0) {
       return res.status(404).json({ success: false, message: 'Post não encontrado' });
     }
 
+    // Se não enviou imagem nova, manter a antiga
+    const finalImage = image || existingPost[0].image;
+
     // Atualizar o post
     await db.execute(
-      'UPDATE posts SET title = ?, content = ?, updated_at = NOW() WHERE id = ?',
-      [title, content, id]
+      `UPDATE posts 
+       SET title = ?, content = ?, image = ?, tag1 = ?, tag2 = ?, tag3 = ?, updated_at = NOW() 
+       WHERE id = ?`,
+      [title, content, finalImage, tag1 || null, tag2 || null, tag3 || null, id]
     );
 
     res.json({ success: true, message: 'Post atualizado com sucesso' });
@@ -199,6 +227,7 @@ app.put('/admin/posts/:id', autenticar, async (req, res) => {
     res.status(500).json({ success: false, message: 'Erro interno do servidor' });
   }
 });
+
 
 // Excluir post (Admin)
 app.delete('/admin/posts/:id', autenticar, async (req, res) => {
@@ -228,9 +257,19 @@ app.delete('/admin/posts/:id', autenticar, async (req, res) => {
 app.get('/api/posts', async (req, res) => {
   try {
     const [posts] = await db.execute(`
-      SELECT p.id, p.title, p.content, p.created_at, p.updated_at, u.username as author_name
-      FROM posts p 
-      LEFT JOIN users u ON p.author_id = u.id 
+      SELECT 
+        p.id, 
+        p.title, 
+        p.content, 
+        p.image, 
+        p.tag1, 
+        p.tag2, 
+        p.tag3, 
+        p.created_at, 
+        p.updated_at, 
+        u.username AS author_name
+      FROM posts p
+      LEFT JOIN users u ON p.author_id = u.id
       ORDER BY p.created_at DESC
     `);
     res.json(posts);
@@ -321,3 +360,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });
+
+
+module.exports = app;

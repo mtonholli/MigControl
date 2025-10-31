@@ -74,7 +74,7 @@ function exibirPosts(posts) {
 																}, '${post.title.replace(
 				/'/g,
 				"\\'"
-			)}'))" title="Excluir">
+			)}')" title="Excluir">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </div>
