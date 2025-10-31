@@ -353,6 +353,16 @@ app.get('/status', (req, res) => {
 // Servir arquivos estáticos da pasta public
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Redirecionar /login para /login.html
+app.get('/login', (req, res) => {
+  res.redirect('/login.html');
+});
+
+// Redirecionar /blog para /blog.html
+app.get('/blog', (req, res) => {
+  res.redirect('/blog.html');
+});
+
 // Fallback para SPA (Single Page Application)
 app.get(/^\/(?!api|admin).*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
