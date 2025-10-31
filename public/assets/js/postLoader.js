@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		imageEl.src = imagem;
 
 		// Se o conteúdo vier em HTML, exibe diretamente
-		bodyEl.innerHTML = post.content;
+		bodyEl.innerHTML = post.content.replace(/\n/g, '<br>');
 	} catch (error) {
 		console.error("Erro ao carregar post:", error);
 		bodyEl.innerHTML = `
