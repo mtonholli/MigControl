@@ -1,5 +1,3 @@
-// assets/js/blogLoader.js
-
 document.addEventListener("DOMContentLoaded", async () => {
 	const container = document.getElementById("blog-posts");
 
@@ -19,31 +17,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 		container.innerHTML = posts
 			.map((post, index) => {
-				const dataFormatada = new Date(post.created_at)
-					.toLocaleDateString("pt-BR", {
-						day: "2-digit",
-						month: "long",
-						year: "numeric",
-					})
-					.replace(" de ", " de ");
+				const dataFormatada = new Date(post.created_at).toLocaleDateString("pt-BR", {
+					day: "2-digit",
+					month: "long",
+					year: "numeric",
+				});
 
-				// Imagem padrão caso o post não tenha uma
+				// ✅ Define a imagem padrão se não houver imagem no post
 				const imagem =
 					post.image && post.image.trim() !== ""
 						? post.image
-						: ".\assets\images\LogoMigControlAzul.png";
+						: "/assets/images/LogoMigControlAzul.png";
 
-				// Gera um link para a página do post completo (exemplo)
+				// ✅ Monta as tags (usa apenas as que existem)
+				const tags = [post.tag1, post.tag2, post.tag3]
+					.filter(Boolean)
+					.map((t) => `<span class="tag">${t}</span>`)
+					.join("");
+
+				// ✅ Link para a página do post completo
 				const link = `/post.html?id=${post.id}`;
 
 				return `
 				<a href="${link}" class="produto-card" style="--delay: ${index * 0.2}s">
 					<div class="imagem-wrapper">
 						<img src="${imagem}" alt="${post.title}" />
-						<span class="tags">
-							<span class="tag">Blog</span>
-							<span class="tag">MigControl</span>
-						</span>
+						<span class="tags">${tags || "<span class='tag'>MigControl</span>"}</span>
 					</div>
 					<div class="produto-texto">
 						<span class="data-publicacao">${dataFormatada}</span>
