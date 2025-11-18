@@ -3,6 +3,7 @@
 .diferenciais {
   display: flex;
   flex-direction: column;
+  align-content: center;
   height: 100%;
   gap: 50px;
   padding: 80px 140px;
@@ -27,11 +28,17 @@
 .diferencial-card {
   position: relative;
   display: flex;
-  /* max-width: 400px; */
+  max-width: 400px;
   height: 100%;
   border-radius: 0px 60px 60px 60px;
   background: linear-gradient(to right, var(--color-primary-800), var(--color-primary-400));
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.col-lg-4, 
+.col-lg-6 {
+  display: flex;
+  justify-content: center;
 }
 
 .card-spacing {
@@ -46,6 +53,7 @@
 
 .card-spacing .diferencial-row-primary {
   width: 100%;
+  max-width: 25vw;
   margin: 0;
   padding: 0;
   display: flex;
@@ -57,6 +65,7 @@
 
 .card-spacing .diferencial-row-secundary {
   width: 100%;
+  max-width: 25vw;
   margin: 0;
   padding: 0;
   display: flex;

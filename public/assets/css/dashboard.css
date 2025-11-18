@@ -19,6 +19,13 @@ p {
 	margin-bottom: 2rem;
 }
 
+.logo {
+	max-width: 250px;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+}
+
 .card {
 	border: none;
 	border-radius: 15px;

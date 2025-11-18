@@ -6,7 +6,12 @@
 
 /* Header */
 .header-blog {
-  background: var(--color-primary-500);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-800) 0%,
+    var(--color-primary-600) 50%,
+    var(--color-primary-400) 100%
+  );
   color: var(--color-gray-50);
   padding: 80px 140px 60px;
   text-align: center;
