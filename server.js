@@ -308,9 +308,9 @@ WHERE p.id = ?
 // ========== ROTA DE EMAIL ==========
 
 app.post('/enviar-email', async (req, res) => {
-  const { nome, email, cnpj, telefone, produto, meiocontato, mensagem } = req.body;
+  const { nome, email, cnpj, telefone, produtos, meiocontato, mensagem } = req.body;
 
-  const transporter = nodemailer.createTransporter({
+  const transporter = nodemailer.createTransport({
     host: 'localhost',
     port: 25,
     secure: false,
@@ -323,7 +323,7 @@ app.post('/enviar-email', async (req, res) => {
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>CNPJ:</strong> ${cnpj}</p>
     <p><strong>Telefone:</strong> ${telefone}</p>
-    <p><strong>Produto:</strong> ${produto}</p>
+    <p><strong>Produtos:</strong> ${produtos.map(p => `• ${p}`).join('\n')}</p>
     <p><strong>Meio de Contato:</strong> ${meiocontato}</p>
     <p><strong>Mensagem:</strong><br/>${mensagem}</p>
   `;

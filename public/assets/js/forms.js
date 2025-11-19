@@ -54,27 +54,26 @@ export function initializeForms() {
     })
   })
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault()
+form.addEventListener('submit', async function (e) {
+  e.preventDefault()
 
-    console.log('Submit do formulário disparado!')
+  if (!validateProdutos()) return
 
-    // Validar produtos antes de enviar
-    if (!validateProdutos()) {
-      return
+  const formData = new FormData(form)
+  const data = {}
+
+  // converter formData ignorando produtos
+  formData.forEach((value, key) => {
+    if (key !== "produtos") {
+      data[key] = value
     }
+  })
 
-    const formData = new FormData(form)
-    const data = Object.fromEntries(formData.entries())
+  // array real com todos os produtos selecionados
+  const selectedProdutos = getSelectedProdutos()
+  data.produtos = selectedProdutos
 
-    // Adicionar produtos selecionados ao objeto de dados
-    const selectedProdutos = getSelectedProdutos()
-    data.produtos = selectedProdutos
-
-    // Remover as entradas individuais de produtos do FormData
-    // pois agora temos um array organizado
-    delete data.produtos
-    data.produtos = selectedProdutos
+  console.log("Dados do formulário:", data)
 
     console.log('Dados do formulário:', data)
 
