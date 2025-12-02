@@ -15,6 +15,11 @@
   gap: 40px;
 }
 
+.diferencial-content {
+  
+  padding-bottom: 40px;
+}
+
 .diferenciais .text-content {
   display: flex;
   flex-direction: column;

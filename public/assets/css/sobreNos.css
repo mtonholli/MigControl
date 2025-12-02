@@ -3,7 +3,7 @@
 /* Hero Section */
 .hero-sobre {
   position: relative;
-  min-height: 50vh;
+  min-height: 40vh;
   background: linear-gradient(
     135deg,
     var(--color-primary-800) 0%,
@@ -25,6 +25,7 @@
 }
 
 .hero-title {
+  padding-top: 50px;
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--color-gray-50);

@@ -3,7 +3,7 @@
 /* Banner */
 .banner-products {
   position: relative;
-  min-height: 50vh;
+  min-height: 40vh;
   background: linear-gradient(
     135deg,
     var(--color-primary-800) 0%,
@@ -17,11 +17,35 @@
 }
 
 .banner-products h1 {
+  text-align: center;
+  align-items: center;
+  padding: 40px 0;
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--color-gray-50);
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-badge {
+  margin: 0 auto;;
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  color: var(--color-gray-50);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-badge i {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
 }
 
 /* Categorias */

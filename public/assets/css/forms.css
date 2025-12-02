@@ -173,6 +173,18 @@
   padding-right: 2.5rem;
 }
 
+.modal-content textarea[name='mensagem'] {
+  flex: 1 1 100%;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  color: var(--color-gray-900);
+  appearance: none;
+  
+  background-size: 12px 7px;
+  padding-right: 2.5rem;
+}
+
 /* Estilos para a seção de produtos */
 .produtos-section {
   margin: 1.5rem 0;
