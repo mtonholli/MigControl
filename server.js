@@ -308,7 +308,20 @@ WHERE p.id = ?
 // ========== ROTA DE EMAIL ==========
 
 app.post('/enviar-email', async (req, res) => {
-  const { nome, email, cnpj, telefone, produtos, meiocontato, mensagem } = req.body;
+  let { nome, email, cnpj, telefone, produtos, meiocontato, mensagem } = req.body;
+
+  // Garante que produtos sempre seja um array ou uma string segura
+  let produtosFormatados = '';
+
+  if (Array.isArray(produtos)) {
+    produtosFormatados = produtos.length > 0
+      ? produtos.map(p => `• ${p}`).join('<br>')
+      : 'Nenhum produto selecionado';
+  } else if (typeof produtos === 'string') {
+    produtosFormatados = `• ${produtos}`;
+  } else {
+    produtosFormatados = 'Nenhum produto selecionado';
+  }
 
   const transporter = nodemailer.createTransport({
     host: 'localhost',
@@ -323,7 +336,7 @@ app.post('/enviar-email', async (req, res) => {
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>CNPJ:</strong> ${cnpj}</p>
     <p><strong>Telefone:</strong> ${telefone}</p>
-    <p><strong>Produtos:</strong> ${produtos.map(p => `• ${p}`).join('\n')}</p>
+    <p><strong>Produtos:</strong><br>${produtosFormatados}</p>
     <p><strong>Meio de Contato:</strong> ${meiocontato}</p>
     <p><strong>Mensagem:</strong><br/>${mensagem}</p>
   `;
@@ -342,6 +355,7 @@ app.post('/enviar-email', async (req, res) => {
     res.status(500).json({ success: false, message: 'Erro ao enviar e-mail.' });
   }
 });
+
 
 // ========== ROTAS GERAIS ==========
 
