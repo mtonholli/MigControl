@@ -48,6 +48,44 @@
   color: var(--color-secondary);
 }
 
+.bcrumb {
+  padding-left: 0.5rem;
+  font-weight: 600;
+  color: var(--color-primary-900);
+  text-decoration: none;
+  padding-left: 8vw;
+}
+
+.bcrumb:hover {
+  color: var(--color-primary-900);
+  padding-left: 8vw;
+}
+
+.bcrumb1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary-700);
+  text-decoration: none;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.bcrumb2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary-700);
+  text-decoration: none;
+  padding-left: 0.5rem;
+}
+
+.bcrumb1:hover {
+  text-decoration: underline;
+}
+
+.bcrumb2:hover {
+  text-decoration: underline;
+}
+
 /* Categorias */
 .product-category {
   background-color: var(--color-gray-50);

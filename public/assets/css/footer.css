@@ -104,7 +104,7 @@ hr {
 }
 
 .footer-content .about {
-  max-width: 550px;
+  max-width: 400px;
 }
 
 .footer-content .links-content {
@@ -144,6 +144,8 @@ hr {
 }
 
 .footer-content .contact-content {
+  
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 10px;
