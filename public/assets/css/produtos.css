@@ -28,6 +28,8 @@
 }
 
 .hero-badge {
+  display: flex;
+  flex-direction: row;
   margin: 0 auto;;
   position: relative;
   width: fit-content;
