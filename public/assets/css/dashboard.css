@@ -8,6 +8,58 @@ p {
     max-width: 100%;
 }
 
+/* Container do conteúdo do post */
+.conteudo {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: #2c2c2c;
+}
+
+/* Espaçamento correto */
+.conteudo p {
+  margin-bottom: 1rem;
+}
+
+.conteudo h1,
+.conteudo h2,
+.conteudo h3,
+.conteudo h4 {
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+}
+
+.conteudo ul,
+.conteudo ol {
+  margin: 1rem 0 1rem 2rem;
+}
+
+.conteudo li {
+  margin-bottom: 0.5rem;
+}
+
+/* Imagens do TinyMCE */
+.conteudo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Links */
+.conteudo a {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+/* Citações */
+.conteudo blockquote {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+}
+
+
 .dashboard-header {
 	background: linear-gradient(
 		135deg,
