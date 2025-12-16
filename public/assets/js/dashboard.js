@@ -7,6 +7,31 @@ document.addEventListener("DOMContentLoaded", function () {
 	carregarPosts();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  tinymce.init({
+    selector: "#content",
+    height: 400,
+    menubar: true,
+    plugins: "lists link image code table autoresize",
+    toolbar:
+      "undo redo | blocks fontfamily fontsize | " +
+      "bold italic underline | forecolor backcolor | " +
+      "alignleft aligncenter alignright | " +
+      "bullist numlist | link image | removeformat | code",
+    setup(editor) {
+      editor.on("init", () => {
+        editorReady = true;
+
+        // 🔥 aplica conteúdo pendente com segurança
+        if (pendingEditorContent !== null) {
+          editor.setContent(pendingEditorContent);
+          pendingEditorContent = null;
+        }
+      });
+    }
+  });
+});
+
 // Carregar posts
 async function carregarPosts() {
 	try {
