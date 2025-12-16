@@ -100,42 +100,49 @@ function abrirModalNovo() {
 	);
 }
 
+
 // Editar post
 async function editarPost(id) {
-	try {
-		const response = await fetch(`/admin/posts/${id}`);
-		const post = await response.json();
+  try {
+    const response = await fetch(`/admin/posts/${id}`);
+    const post = await response.json();
 
-		if (!response.ok) {
-			throw new Error(post.message || "Erro ao carregar post");
-		}
+    if (!response.ok) {
+      throw new Error(post.message || "Erro ao carregar post");
+    }
 
-		currentPostId = id;
+    currentPostId = id;
 
-		document.getElementById("modalTitle").innerHTML =
-			'<i class="fas fa-edit me-2"></i>Editar Post';
+    document.getElementById("modalTitle").innerHTML =
+      '<i class="fas fa-edit me-2"></i>Editar Post';
 
-		document.getElementById("postId").value = id;
-		document.getElementById("title").value = post.title;
+    document.getElementById("postId").value = id;
+    document.getElementById("title").value = post.title;
 
-		const modalEl = document.getElementById("postModal");
-		const modal = new bootstrap.Modal(modalEl);
-		modal.show();
+    const modalEl = document.getElementById("postModal");
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
 
-		// ✅ só injeta conteúdo depois do modal aberto
-		modalEl.addEventListener(
-			"shown.bs.modal",
-			() => {
-				const editor = tinymce.get("content");
-				if (editor) {
-					editor.setContent(post.content || "");
-				}
-			},
-			{ once: true }
-		);
-	} catch (error) {
-		mostrarAlerta("Erro ao carregar post: " + error.message, "danger");
-	}
+    modalEl.addEventListener(
+      "shown.bs.modal",
+      () => {
+        const aplicarConteudo = () => {
+          const editor = tinymce.get("content");
+          if (editor) {
+            editor.setContent(post.content || "");
+          } else {
+            // tenta novamente até o editor existir
+            setTimeout(aplicarConteudo, 50);
+          }
+        };
+
+        aplicarConteudo();
+      },
+      { once: true }
+    );
+  } catch (error) {
+    mostrarAlerta("Erro ao carregar post: " + error.message, "danger");
+  }
 }
 
 // Salvar post
