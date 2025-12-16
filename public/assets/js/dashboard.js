@@ -1,4 +1,6 @@
 let currentPostId = null;
+let pendingEditorContent = null;
+let editorReady = false;
 
 // Carregar posts ao inicializar a página
 document.addEventListener("DOMContentLoaded", function () {
@@ -119,27 +121,20 @@ async function editarPost(id) {
     document.getElementById("postId").value = id;
     document.getElementById("title").value = post.title;
 
-    const modalEl = document.getElementById("postModal");
-    const modal = new bootstrap.Modal(modalEl);
+    // 🔑 guarda conteúdo
+    pendingEditorContent = post.content || "";
+
+    const modal = new bootstrap.Modal(
+      document.getElementById("postModal")
+    );
     modal.show();
 
-    modalEl.addEventListener(
-      "shown.bs.modal",
-      () => {
-        const aplicarConteudo = () => {
-          const editor = tinymce.get("content");
-          if (editor) {
-            editor.setContent(post.content || "");
-          } else {
-            // tenta novamente até o editor existir
-            setTimeout(aplicarConteudo, 50);
-          }
-        };
+    // se o editor já estiver pronto, aplica imediatamente
+    if (editorReady) {
+      tinymce.get("content").setContent(pendingEditorContent);
+      pendingEditorContent = null;
+    }
 
-        aplicarConteudo();
-      },
-      { once: true }
-    );
   } catch (error) {
     mostrarAlerta("Erro ao carregar post: " + error.message, "danger");
   }
