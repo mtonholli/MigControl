@@ -13,6 +13,16 @@
 	background-color: #0d1b2a;
 }
 
+.post-content img,
+.conteudo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.conteudo * {
+  box-sizing: border-box;
+}
+
 .post-banner img.post-image {
 	width: 100%;
 	height: 100%;
