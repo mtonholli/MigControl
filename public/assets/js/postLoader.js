@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const params = new URLSearchParams(window.location.search);
 	const postId = params.get("id");
 
+	const postContent = document.getElementById('post-content');
 	const titleEl = document.getElementById("post-title");
 	const dateEl = document.getElementById("post-date");
 	const imageEl = document.getElementById("post-image");

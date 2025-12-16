@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
 	const container = document.getElementById("blog-posts");
+	const postContent = document.getElementById('post-content');
 
 	try {
 		const response = await fetch("/api/posts");
