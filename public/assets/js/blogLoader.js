@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 			return;
 		}
 
+		postContent.innerHTML = post.content;
+
 		container.innerHTML = posts
 			.map((post, index) => {
 				const dataFormatada = new Date(post.created_at).toLocaleDateString("pt-BR", {
