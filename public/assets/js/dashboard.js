@@ -99,29 +99,35 @@ function abrirModalNovo() {
 
 // Editar post
 async function editarPost(id) {
-	try {
-		const response = await fetch(`/admin/posts/${id}`);
-		const post = await response.json();
+  try {
+    const response = await fetch(`/admin/posts/${id}`);
+    const post = await response.json();
 
-		if (!response.ok) {
-			throw new Error(post.message || "Erro ao carregar post");
-		}
+    if (!response.ok) {
+      throw new Error(post.message || "Erro ao carregar post");
+    }
 
-		currentPostId = id;
-		document.getElementById("modalTitle").innerHTML =
-			'<i class="fas fa-edit me-2"></i>Editar Post';
-		document.getElementById("postId").value = id;
-		document.getElementById("title").value = post.title;
-		setTimeout(() => {
-  if (tinymce.get('content')) {
-    tinymce.get('content').setContent(post.content);
+    currentPostId = id;
+
+    document.getElementById("modalTitle").innerHTML =
+      '<i class="fas fa-edit me-2"></i>Editar Post';
+
+    document.getElementById("postId").value = id;
+    document.getElementById("title").value = post.title;
+
+    // ✅ TinyMCE
+    const editor = tinymce.get("content");
+    if (editor) {
+      editor.setContent(post.content || "");
+    } else {
+      // fallback (caso o editor ainda não tenha iniciado)
+      document.getElementById("content").value = post.content || "";
+    }
+
+    new bootstrap.Modal(document.getElementById("postModal")).show();
+  } catch (error) {
+    mostrarAlerta("Erro ao carregar post: " + error.message, "danger");
   }
-}, 300);
-
-		new bootstrap.Modal(document.getElementById("postModal")).show();
-	} catch (error) {
-		mostrarAlerta("Erro ao carregar post: " + error.message, "danger");
-	}
 }
 
 // Salvar post
