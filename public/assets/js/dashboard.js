@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selector: "#content",
     height: 400,
     menubar: true,
-	content_css: "../css/post.css",
+	content_css: "/assets/css/post.css",
     plugins: "lists link image code table autoresize",
     toolbar:
       "undo redo | blocks fontfamily fontsize | " +
