@@ -1,243 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dashboard Admin - Blog | MigControl</title>
 
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
-		<!-- Font Awesome -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-		/>
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-			rel="stylesheet"
-		/>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Dashboard Admin - Blog | MigControl</title>
 
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="../assets/css/dashboard.css" />
-	</head>
-	<body>
-		<div class="dashboard-header position-relative">
-			<div class="logo position-absolute container-fluid">
-				<img
-				src="../assets/images/LogoMigControlBranca.png"
-				alt="Logo Mig Control"
-				class="logo position-absolute"/>
-			</div>
-			<div class="container">
-					<div class="title text-center">
-						<h1>
-						Dashboard - Blog Admin
-						</h1>
-						<p class="mb-0 justify-self-center	">Gerencie os posts do blog MigControl</p>
-					</div>
-					<div class="col-md-4 text-end">
-						<button class="btn btn-light logout-btn" onclick="logout()">
-							<i class="fas fa-sign-out-alt me-2"></i>Sair
-						</button>
-					</div>
-				</div>
-			</div>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+		rel="stylesheet" />
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../assets/css/dashboard.css" />
+</head>
+
+<body>
+	<div class="dashboard-header position-relative">
+		<div class="logo position-absolute container-fluid">
+			<img src="../assets/images/LogoMigControlBranca.png" alt="Logo Mig Control"
+				class="logo position-absolute" />
 		</div>
-
 		<div class="container">
-			<!-- Alertas -->
-			<div id="alerts"></div>
-
-			<!-- Botão Novo Post -->
-			<div class="row mb-4">
-				<div class="col-12">
-					<button
-						class="button button-blue"
-						data-bs-toggle="modal"
-						data-bs-target="#postModal"
-						onclick="abrirModalNovo()"
-					>
-						<i class="fas fa-plus me-2"></i>Novo Post
-					</button>
-				</div>
+			<div class="title text-center">
+				<h1>
+					Dashboard - Blog Admin
+				</h1>
+				<p class="mb-0 justify-self-center	">Gerencie os posts do blog MigControl</p>
 			</div>
-
-			<!-- Lista de Posts -->
-			<div class="row">
-				<div class="col-12">
-					<div class="card">
-						<div class="card-header">
-							<h3 class="mb-0">
-								<i class="fas fa-blog me-2"></i>Posts do Blog
-							</h3>
-						</div>
-						<div class="card-body">
-							<div id="loading" class="text-center py-4">
-								<div class="spinner-border text-primary" role="status">
-									<span class="visually-hidden">Carregando...</span>
-								</div>
-							</div>
-							<div id="posts-container"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Modal de Post -->
-<!-- Modal de Post -->
-<div class="modal fade" id="postModal" tabindex="-1">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle">
-					<i class="fas fa-edit me-2"></i>Novo Post
-				</h5>
-				<button
-					type="button"
-					class="btn-close btn-close-white"
-					data-bs-dismiss="modal"
-				></button>
-			</div>
-			<div class="modal-body">
-				<form id="postForm" enctype="multipart/form-data">
-					<input type="hidden" id="postId" />
-
-					<div class="mb-3">
-						<label for="title" class="form-label">Título do Post</label>
-						<input
-							type="text"
-							class="form-control"
-							id="title"
-							name="title"
-							required
-						/>
-					</div>
-
-					<div class="mb-3">
-						<label for="content" class="form-label">Conteúdo</label>
-						<textarea
-							class="form-control"
-							id="content"
-							name="content"
-							rows="8"
-							required
-							placeholder="Digite o conteúdo do post aqui..."
-						></textarea>
-					</div>
-
-					<div class="mb-3">
-						<label for="image" class="form-label">Imagem de capa</label>
-						<input
-							type="file"
-							class="form-control"
-							id="image"
-							name="image"
-							accept="image/*"
-						/>
-						<small class="text-muted">Formatos aceitos: JPG, PNG, WEBP</small>
-					</div>
-
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="tag1" class="form-label">Tag 1</label>
-							<input
-								type="text"
-								class="form-control"
-								id="tag1"
-								name="tag1"
-								placeholder="Ex: Segurança"
-							/>
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="tag2" class="form-label">Tag 2</label>
-							<input
-								type="text"
-								class="form-control"
-								id="tag2"
-								name="tag2"
-								placeholder="Ex: Inovação"
-							/>
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="tag3" class="form-label">Tag 3</label>
-							<input
-								type="text"
-								class="form-control"
-								id="tag3"
-								name="tag3"
-								placeholder="Ex: Eficiência"
-							/>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button
-					type="button"
-					class="btn btn-secondary"
-					data-bs-dismiss="modal"
-				>
-					Cancelar
-				</button>
-				<button
-					type="button"
-					class="btn btn-primary"
-					onclick="salvarPost()"
-				>
-					<i class="fas fa-save me-2"></i>Salvar Post
+			<div class="col-md-4 text-end">
+				<button class="btn btn-light logout-btn" onclick="logout()">
+					<i class="fas fa-sign-out-alt me-2"></i>Sair
 				</button>
 			</div>
 		</div>
 	</div>
-</div>
+	</div>
 
+	<div class="container">
+		<!-- Alertas -->
+		<div id="alerts"></div>
 
-		<!-- Modal de Confirmação de Exclusão -->
-		<div class="modal fade" id="deleteModal" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header bg-danger text-white">
-						<h5 class="modal-title">
-							<i class="fas fa-trash me-2"></i>Confirmar Exclusão
-						</h5>
-						<button
-							type="button"
-							class="btn-close btn-close-white"
-							data-bs-dismiss="modal"
-						></button>
+		<!-- Botão Novo Post -->
+		<div class="row mb-4">
+			<div class="col-12">
+				<button class="button button-blue" data-bs-toggle="modal" data-bs-target="#postModal"
+					onclick="abrirModalNovo()">
+					<i class="fas fa-plus me-2"></i>Novo Post
+				</button>
+			</div>
+		</div>
+
+		<!-- Lista de Posts -->
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="mb-0">
+							<i class="fas fa-blog me-2"></i>Posts do Blog
+						</h3>
 					</div>
-					<div class="modal-body">
-						<p>Tem certeza que deseja excluir este post?</p>
-						<p><strong id="deletePostTitle"></strong></p>
-						<p class="text-muted">Esta ação não pode ser desfeita.</p>
-					</div>
-					<div class="modal-footer">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							data-bs-dismiss="modal"
-						>
-							Cancelar
-						</button>
-						<button type="button" class="btn btn-danger" id="confirmDelete">
-							<i class="fas fa-trash me-2"></i>Excluir
-						</button>
+					<div class="card-body">
+						<div id="loading" class="text-center py-4">
+							<div class="spinner-border text-primary" role="status">
+								<span class="visually-hidden">Carregando...</span>
+							</div>
+						</div>
+						<div id="posts-container"></div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Bootstrap JS -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Modal de Post -->
+	<!-- Modal de Post -->
+	<div class="modal fade" id="postModal" tabindex="-1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalTitle">
+						<i class="fas fa-edit me-2"></i>Novo Post
+					</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<form id="postForm" enctype="multipart/form-data">
+						<input type="hidden" id="postId" />
 
-		<!-- JavaScript -->
-		<script src="../assets/js/dashboard.js"></script>
-	</body>
+						<div class="mb-3">
+							<label for="title" class="form-label">Título do Post</label>
+							<input type="text" class="form-control" id="title" name="title" required />
+						</div>
+
+						<div class="mb-3">
+							<label for="content" class="form-label">Conteúdo</label>
+							<textarea class="form-control" id="content" name="content" rows="8" required
+								placeholder="Digite o conteúdo do post aqui..."></textarea>
+						</div>
+
+						<div class="mb-3">
+							<label for="image" class="form-label">Imagem de capa</label>
+							<input type="file" class="form-control" id="image" name="image" accept="image/*" />
+							<small class="text-muted">Formatos aceitos: JPG, PNG, WEBP</small>
+						</div>
+
+						<div class="row">
+							<div class="col-md-4 mb-3">
+								<label for="tag1" class="form-label">Tag 1</label>
+								<input type="text" class="form-control" id="tag1" name="tag1"
+									placeholder="Ex: Segurança" />
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="tag2" class="form-label">Tag 2</label>
+								<input type="text" class="form-control" id="tag2" name="tag2"
+									placeholder="Ex: Inovação" />
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="tag3" class="form-label">Tag 3</label>
+								<input type="text" class="form-control" id="tag3" name="tag3"
+									placeholder="Ex: Eficiência" />
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+					<button type="button" class="btn btn-primary" onclick="salvarPost()">
+						<i class="fas fa-save me-2"></i>Salvar Post
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal de Confirmação de Exclusão -->
+	<div class="modal fade" id="deleteModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-danger text-white">
+					<h5 class="modal-title">
+						<i class="fas fa-trash me-2"></i>Confirmar Exclusão
+					</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<p>Tem certeza que deseja excluir este post?</p>
+					<p><strong id="deletePostTitle"></strong></p>
+					<p class="text-muted">Esta ação não pode ser desfeita.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+					<button type="button" class="btn btn-danger" id="confirmDelete">
+						<i class="fas fa-trash me-2"></i>Excluir
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- TinyMCE -->
+	<script src="https://cdn.tiny.cloud/1/o6dsk6e4x98yc3mlzll748h3ejrqznrilhrb67s35d1gqdfl/tinymce/6/tinymce.min.js"
+		referrerpolicy="origin"></script>
+
+	<script>
+		let editorInicializado = false;
+
+		const postModal = document.getElementById('postModal');
+
+		postModal.addEventListener('shown.bs.modal', () => {
+			if (!editorInicializado) {
+				tinymce.init({
+					selector: '#content',
+					height: '420px',
+					language: 'pt_BR',
+					menubar: false,
+					plugins: "advcode advlist advtable anchor autocorrect autolink autosave casechange charmap checklist codesample directionality editimage emoticons export footnotes formatpainter help image insertdatetime link linkchecker lists media mediaembed mergetags nonbreaking pagebreak permanentpen powerpaste searchreplace table tableofcontents tinymcespellchecker typography visualblocks visualchars wordcount",
+					toolbar1:
+						'undo redo spellcheckdialog | blocks fontfamily fontsize | removeformat typography',
+					toolbar2:
+						'bold italic underline forecolor backcolor | link image | align lineheight checklist bullist numlist | indent outdent',
+					branding: false
+				});
+				editorInicializado = true;
+			}
+		});
+
+		postModal.addEventListener('hidden.bs.modal', () => {
+			tinymce.remove('#content');
+			editorInicializado = false;
+		});
+	</script>
+
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- JavaScript -->
+	<script src="../assets/js/dashboard.js"></script>
+</body>
+
 </html>

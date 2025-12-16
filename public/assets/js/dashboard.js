@@ -112,7 +112,11 @@ async function editarPost(id) {
 			'<i class="fas fa-edit me-2"></i>Editar Post';
 		document.getElementById("postId").value = id;
 		document.getElementById("title").value = post.title;
-		document.getElementById("content").value = post.content;
+		setTimeout(() => {
+  if (tinymce.get('content')) {
+    tinymce.get('content').setContent(post.content);
+  }
+}, 300);
 
 		new bootstrap.Modal(document.getElementById("postModal")).show();
 	} catch (error) {
@@ -124,6 +128,11 @@ async function editarPost(id) {
 async function salvarPost() {
   const form = document.getElementById('postForm');
   const formData = new FormData(form);
+
+  const editor = tinymce.get('content');
+  if (editor) {
+    formData.set('content', editor.getContent());
+  }
 
   const postId = document.getElementById('postId').value;
   const method = postId ? 'PUT' : 'POST';

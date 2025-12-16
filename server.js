@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const sanitizeHtml = require('sanitize-html');
 const session = require('express-session');
 const express = require('express');
 const app = express();
@@ -167,6 +168,15 @@ const upload = multer({ storage });
 // Criar novo post (Admin)
 app.post('/admin/posts', autenticar, upload.single('image'), async (req, res) => {
   const { title, content, tag1, tag2, tag3 } = req.body;
+  const cleanContent = sanitizeHtml(content, {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+    'img', 'h1', 'h2', 'h3'
+  ]),
+  allowedAttributes: {
+    '*': ['style', 'class'],
+    img: ['src', 'alt']
+  }
+});
   const image = req.file ? `/uploads/${req.file.filename}` : null;
 
   if (!title || !content) {
@@ -177,7 +187,7 @@ app.post('/admin/posts', autenticar, upload.single('image'), async (req, res) =>
     const [result] = await db.execute(
       `INSERT INTO posts (title, content, image, tag1, tag2, tag3, author_id, created_at, updated_at)
        VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NOW())`,
-      [title, content, image, tag1 || null, tag2 || null, tag3 || null, req.session.userId]
+      [title, cleanContent, image, tag1 || null, tag2 || null, tag3 || null, req.session.userId]
     );
 
     res.json({
@@ -191,12 +201,19 @@ app.post('/admin/posts', autenticar, upload.single('image'), async (req, res) =>
   }
 });
 
-
-// Atualizar post existente (Admin)
 // Atualizar post existente (Admin)
 app.put('/admin/posts/:id', autenticar, upload.single('image'), async (req, res) => {
   const { id } = req.params;
   const { title, content, tag1, tag2, tag3 } = req.body;
+  const cleanContent = sanitizeHtml(content, {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+    'img', 'h1', 'h2', 'h3'
+  ]),
+  allowedAttributes: {
+    '*': ['style', 'class'],
+    img: ['src', 'alt']
+  }
+});
   const image = req.file ? `/uploads/${req.file.filename}` : null;
 
   if (!title || !content) {
@@ -218,7 +235,7 @@ app.put('/admin/posts/:id', autenticar, upload.single('image'), async (req, res)
       `UPDATE posts 
        SET title = ?, content = ?, image = ?, tag1 = ?, tag2 = ?, tag3 = ?, updated_at = NOW() 
        WHERE id = ?`,
-      [title, content, finalImage, tag1 || null, tag2 || null, tag3 || null, id]
+      [title, cleanContent, finalImage, tag1 || null, tag2 || null, tag3 || null, id]
     );
 
     res.json({ success: true, message: 'Post atualizado com sucesso' });
